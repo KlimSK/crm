@@ -595,9 +595,10 @@ main
         font-size: 20px
         color: #db2828
         margin: 0 15px
-    .modal-save
-      display: flex
-      justify-content: center
+.modal-save
+  margin-top: 15px
+  display: flex
+  justify-content: center
 
 #tabs-panel-statusy
   display: flex
@@ -863,3 +864,28 @@ footer
     background: #F00
 
 .modal-order-notification
+  form
+    .form-row
+      display: flex
+      font-size: 14px
+      margin-bottom: 10px
+      align-items: center
+      justify-content: space-between
+      label
+        width: 39%
+        text-align: right
+        i
+          margin-left: 5px
+      .input-wrap
+        width: 60%
+        .ui.calendar
+          .ui.popup.calendar.active
+            display: flex !important
+            &:before
+              content: none
+        .input, .ui.dropdown, textarea
+          width: 100%
+        input, select, .ui.dropdown, textarea
+          resize: none
+          border: none
+          border-bottom: 1px solid rgba(34, 36, 38, .15)

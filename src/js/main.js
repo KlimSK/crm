@@ -7,7 +7,8 @@ $(document).ready(function () {
     headerDefinitions();
     statusScroll();
     tableDefinitions();
-    orderModalSendCalendar();
+    orderModalSendCalendar($('#order-modal-send'));
+    orderModalSendCalendar($('#notification-date'));
 });
 
 
@@ -118,6 +119,9 @@ function headerDefinitions() {
         .dropdown();
 
 
+    $('.ui.dropdown').each(function () {
+        $(this).dropdown();
+    });
 }
 
 
@@ -154,18 +158,46 @@ function orderModal() {
     $('.main-table tbody tr').dblclick(function () {
         $('.modal-order.modal')
             .modal({
-                allowMultiple: true
+
             })
             .modal('show');
     });
 
+    var modalOrderNotif = $('.modal-order-notification');
+
     $('#create-notification').click(function () {
-        $('.modal-order-notification')
+        modalOrderNotif
             .modal({
+
                 allowMultiple: true,
-                blurring: true
+                closable: true,
+                centered: true,
+                onShow: function(){
+                    $('.modal-order').dimmer('show');
+                },
+                onHide: function () {
+                    $('.modal-order').dimmer('hide');
+                }
             })
             .modal('show');
+    });
+
+    closeModalByDimmer(modalOrderNotif);
+
+}
+
+//Закрыть модальное окно
+function closeModalByDimmer(modal) {
+
+    $(document).mouseup(function(e)
+    {
+        var container = modal;
+
+        // if the target of the click isn't the container nor a descendant of the container
+        if (!container.is(e.target) && container.has(e.target).length === 0)
+        {
+           modal.modal('hide');
+        }
     });
 }
 
@@ -312,8 +344,8 @@ function initSemanticCalendar(start, end) {
     });
 }
 
-function orderModalSendCalendar() {
-    $('#order-modal-send').calendar({
+function orderModalSendCalendar(modal) {
+    modal.calendar({
         type: 'datetime',
         monthFirst: false,
         ampm: false,

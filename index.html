@@ -3230,7 +3230,7 @@
     </table>
 </div>
 
-<div class="ui modal modal-order fullscreen">
+<div class="ui modal modal-order  fullscreen">
     <i class="close icon"></i>
 
     <div class="modal-head">
@@ -3251,7 +3251,14 @@
     <div class="modal-order-buttons">
         <button id="create-notification" class="ui labeled icon button orange mini"><i class="bell icon"></i> Напомнить</button>
         <button class="ui labeled icon button teal mini"><i class="envelope icon"></i> SMS</button>
-        <button class="ui labeled icon button green mini"><i class="phone icon"></i> Позвонить</button>
+        <div class="ui floating dropdown labeled icon button green mini">
+            <i class="phone icon"></i>
+            <span class="text">Позвонить</span>
+            <div class="menu">
+                <div class="item">SIP ТЕЛЕФОН</div>
+                <div class="item">BINOTEL</div>
+            </div>
+        </div>
     </div>
 
     <div class="order-container">
@@ -3911,7 +3918,7 @@
 </div>
 
 
-<div class="ui modal mini modal-order-notification">
+<div class="ui modal tiny modal-order-notification">
     <i class="close icon"></i>
 
     <h2 class="modal-title">
@@ -3920,12 +3927,70 @@
 
     <form action="">
         <div class="form-row">
-            <label for="">Дата выполнения</label>
-            <div class="ui input">
-                <input type="text" placeholder="" >
+            <label for="">Дата выполнения <i class="icon calendar alternate outline"></i></label>
+
+            <div class="input-wrap">
+                <div class="ui calendar" id="notification-date">
+                    <div class="ui input">
+                        <input type="text">
+                    </div>
+                </div>
             </div>
+
         </div>
-        
+
+
+        <div class="form-row">
+            <label for="">Тип <i class="icon phone"></i></label>
+
+            <div class="input-wrap">
+                <select class="ui dropdown">
+                    <option value="1">Перезвонить позже (заказ)</option>
+                    <option value="0">Обычное напоминание</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <label for="">ID заказа <i class="icon "></i></label>
+
+            <div class="input-wrap">
+                <div class="ui disabled input">
+                    <input type="text" value="42532512">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+            <label for="">Для кого <i class="icon"></i></label>
+
+            <div class="input-wrap">
+                <select class="ui dropdown">
+                    <option value="1">Только для себя</option>
+                    <option value="0">Для всех пользователей</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+            <label for="">Описание <i class="icon "></i></label>
+
+            <div class="input-wrap">
+                <div class="ui input">
+                    <textarea rows="4" type="text"></textarea>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-save">
+            <button class="ui labeled icon button blue"><i class="save icon"></i> Сохранить</button>
+        </div>
     </form>
 
 </div>
