@@ -1,0 +1,865 @@
+body
+  font-family: 'Lato' !important
+
+main
+  display: flex
+  aside
+    min-height: 100vh
+    width: 200px
+    overflow: hidden
+
+    flex-shrink: 0
+    background-color: $main-black
+
+    .header-logo
+      background: white
+      display: flex
+      #burger
+        width: 50px
+        height: 50px
+        display: flex
+        justify-content: center
+        align-items: center
+        background: white
+        flex-shrink: 0
+      .home-link
+        padding: 7px
+        background: $main-color
+        display: flex
+        overflow: hidden
+        width: 100%
+        color: white
+        align-items: center
+        justify-content: center
+        text-decoration: none
+        font-weight: 900
+        font-size: 16px
+        white-space: nowrap
+        img
+          max-height: 25px
+          margin-right: 10px
+    nav
+      overflow-y: auto
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        color: #cbcbcb
+        .count-info
+          color: #262729
+          background: #FCC636
+          min-width: 15px
+          min-height: 11px
+          font-size: 11px
+          margin-left: 10px
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: 2px
+
+        > li
+          position: relative
+          img
+            max-width: 100%
+
+          > span
+            display: flex
+            overflow: hidden
+            align-items: center
+            font-size: 15px
+            padding: 7px 10px
+            position: relative
+            cursor: pointer
+            transition: .3s
+
+            &:after
+              font-family: "Font Awesome 5 Free"
+              content: '\f105'
+              font-weight: 900
+              font-size: 16px
+              position: absolute
+              right: 10px
+              display: flex
+              align-items: center
+              transition: .3s
+              justify-content: center
+            &:hover
+              color: white
+              background: #262729
+              &:after
+                transform: rotate(90deg)
+          a
+            color: #cbcbcb
+            text-decoration: none
+            &:hover
+              color: #cbcbcb
+
+          i
+            display: flex !important
+            justify-content: center
+            align-items: center
+            font-size: 17px
+            flex-shrink: 0
+            width: 25px
+            height: 22px
+            margin-right: 15px
+
+          > ul
+            height: 0
+            overflow: hidden
+            display: flex
+            flex-direction: column
+            z-index: 100
+            li
+              position: relative
+              background: #20252a
+              font-size: 13px
+              transition: .3s
+              white-space: nowrap
+              .count-info
+                background: #999
+              &:before
+                content: ''
+                height: 100%
+                width: 0
+                transition: .3s
+                background: $main-color
+                position: absolute
+                left: 0
+                top: 0
+              a
+                display: flex
+                width: 100%
+                padding: 5px 10px 5px 45px
+            li:not(.no-hover)
+              &:hover
+                background: #323b40
+                &:before
+                  width: 5px
+
+            li.active
+              background: #262d32
+              transition: .3s
+              &:before
+                width: 5px
+            li.min-menu-title
+              background: rgba(16, 18, 22, 1)
+              display: none
+              padding: 5px 0
+              color: #FFA
+              position: relative
+              font-size: 17px
+              border-bottom: 1px solid #FFA
+              text-align: center
+              &:after
+                font-family: 'Font Awesome 5 Free'
+                content: '\f107'
+                position: absolute
+                right: 10px
+                font-weight: 900
+
+        .no-submenu
+          span
+            &:after
+              content: none
+        > li.green-info
+          span
+            color: rgb(78, 255, 118)
+            i
+              color: #FF3
+        > li.yellow-info
+          span
+            color: rgb(204, 102, 0)
+        > li.active
+          > span
+            background: #323335
+            color: #FFA
+            &:after
+              transform: rotate(90deg)
+          > ul
+            height: auto
+
+  aside.min-menu
+    overflow: visible
+    nav
+      > ul
+        > li
+          > ul
+            position: absolute
+            left: 100%
+            top: 0
+            li.min-menu-title
+              display: list-item
+              padding: 5px 30px
+            li
+              a
+                padding: 5px 10px
+
+          > span
+            &:after
+              content: none
+
+        > li.active
+          > ul
+            display: flex
+        > li.sidebar-img-block
+          > ul
+            top: auto
+            bottom: 0
+
+  .main-content
+    flex-grow: 1
+    min-width: 0
+    display: flex
+    flex-direction: column
+    position: relative
+    header
+      background: $main-color
+      display: flex
+      align-items: center
+      justify-content: space-between
+      height: 50px
+      padding: 7px
+      .header-info
+        .header-tariff
+          color: #DAE6FA
+          font-weight: 900
+          font-size: 14px
+          span
+            color: #FF9
+          i
+            cursor: help
+        .all-tariffs
+          margin: 0 10px
+          color: #FF9
+          font-size: 12px
+          text-decoration: underline
+          font-weight: 400
+          cursor: pointer
+
+        .header-contacts
+          font-size: 12px
+          font-weight: 900
+          text-decoration: underline
+          cursor: pointer
+
+        .header-additional-info
+          display: flex
+          .info-block
+            margin-right: 12px
+            color: #DAE6FA
+            font-size: 14px
+            font-weight: 900
+            i
+              margin-right: 3px
+      .header-controls
+        display: flex
+        align-items: center
+        .control-block
+          padding: 0 15px
+          border-right: 1px solid rgba(255, 255, 255, 0.5)
+          height: 100%
+          a
+            position: relative
+            color: #8EB8DD
+            i
+              font-size: 18px
+          &:last-child
+            border-right: none
+            padding-right: 0
+            a
+              color: white
+          .control-count
+            position: absolute
+            top: -12px
+            right: -12px
+            color: #262729
+            background: #FCC636
+            min-width: 15px
+            min-height: 11px
+            font-size: 11px
+            margin-left: 10px
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 2px
+
+        .user-controls
+          cursor: pointer
+          color: white
+          i
+            font-size: 18px
+            margin-right: 5px
+          span
+            font-size: 14px
+
+        .header-user-info
+          table
+            font-size: 14px
+
+            td
+              font-weight: 300
+
+              &:nth-child(2)
+                font-weight: 400
+                padding-left: 15px
+                color: #30608b
+              a
+                color: #303030
+                transition: .3s
+            .user-info-settings
+              a
+                transition: .3s
+                i
+                  transition: .3s
+                &:hover
+                  color: #30608b
+                  i
+                    transform: rotate(90deg)
+            .user-info-logout
+              a
+                i
+                  transition: .3s
+                &:hover
+                  i
+                    color: #ff5266
+
+.content-section
+  padding: 10px
+  padding-bottom: 0
+  .content-controls
+    margin-bottom: 15px
+    display: flex
+    justify-content: space-between
+    .selected-blocks
+      display: flex
+      align-items: center
+    .content-control-buttons
+      display: flex
+      align-items: center
+      .refresh-button
+        display: flex
+        height: 100%
+        align-items: center
+        justify-content: center
+        i
+          display: flex
+          height: 100%
+          align-items: center
+      .refresh-time
+        margin-right: 8px
+        input
+          padding: 5px
+          text-align: center
+          max-width: 40px
+
+.ui.inverted.popup.tariff-popup
+  b
+    font-weight: 900
+
+.modal
+  padding: 20px
+  border-radius: 5px
+  .modal-title
+    font-size: 20px
+    color: $main-color
+    margin-top: 0
+  .modal-info
+    display: flex
+    flex-direction: column
+    .info-row
+      display: flex
+      margin-bottom: 10px
+      p
+        margin-bottom: 0
+        font-size: 14px
+        flex-shrink: 0
+        padding: 0 7px
+        &:first-child
+          width: 45%
+          text-align: right
+        &:last-child
+          width: 50%
+  .modal-info-hosting
+    .info-row
+      flex-wrap: wrap
+      p
+        &:first-child
+          width: 50%
+      .host-link
+        display: flex
+        justify-content: center
+        margin-top: 15px
+        width: 100%
+
+.modal-tariffs
+  #table-tariffs-list
+    thead
+      tr
+        th
+          background: #1c71b1
+          color: rgba(255, 255, 255, 0.9)
+
+    tbody
+      tr
+        td
+          font-size: 14px
+          line-height: 1
+          padding-top: 10px
+          padding-bottom: 10px
+      tr.price-row
+        td
+          background: #2185d0
+          color: rgba(255, 255, 255, 0.9)
+
+  .danger-text
+    color: #900
+
+.modal-contacts
+  #table-contacts
+    td
+      i, img
+        margin-right: 10px
+      .crm-link
+        margin-top: 7px
+      i:not(.fa-paper-plane)
+        font-size: 27px
+
+.ui.fullscreen.modal, .ui.fullscreen.modal.scrolling
+  left: auto !important
+
+.ui.modal > .close
+  top: 1.0535rem
+  right: 1rem
+  color: rgba(0, 0, 0, .87)
+
+.modal-order
+  .modal-head
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 20px
+    .modal-title
+      margin-bottom: 0
+    .order-passed
+      display: flex
+      align-items: center
+      margin-right: 35px
+      label
+        cursor: pointer
+  .order-container
+    display: flex
+    justify-content: space-between
+    .col
+      flex-basis: 28%
+      flex-shrink: 0
+      .modal-order-products
+        thead
+          tr
+            th
+              background: #ffe767
+              padding: 5px
+              font-size: 13px
+              text-align: center
+              font-weight: 900
+        tbody
+          tr
+            td
+              padding: 5px
+              font-size: 12px
+            .remove-item
+              color: #db2828
+            .num-cell
+              text-align: right
+        tfoot
+          tr
+            td
+              border-top: 1px solid rgba(34, 36, 38, .1) !important
+              padding: 5px
+
+              b
+                font-weight: 900
+                float: right
+              .sum
+                font-size: 14px
+                color: #db2828
+              &:first-child
+                font-size: 13px
+                a
+                  float: left
+                span
+                  float: right
+                  font-weight: 900
+
+      .order-setting-row
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 5px
+
+        #order-modal-send
+          .ui.popup.calendar.active
+            display: flex !important
+            &:before
+              content: none
+        i
+          color: #4385c2
+          margin-left: 2px
+        label
+          flex-basis: 35%
+          flex-shrink: 0
+          flex-grow: 0
+          text-align: right
+          display: block
+          margin-top: 3px
+          font-size: 12px
+
+        .order-setting
+          flex-basis: 62%
+          flex-shrink: 0
+          flex-grow: 0
+          .setting-info
+            margin-bottom: 0
+            font-size: 12px
+            white-space: nowrap
+            text-overflow: ellipsis
+            padding: 5px
+            border-bottom: 1px solid rgba(34, 36, 38, .15)
+            span
+              font-size: 10px
+              opacity: .8
+          .setting-info.grey
+            opacity: 0.5
+            a
+              opacity: 1
+          .ui.input
+            width: 100%
+            input, textarea
+              font-family: 'Lato'
+              padding: 5px
+              font-size: 12px
+              border: none
+              border-bottom: 1px solid rgba(34, 36, 38, .15)
+              &:focus
+                border-bottom: 1px solid #4385c2
+
+          .ui.dropdown
+            width: 100%
+            min-width: 50px
+            border: none
+            border-bottom: 1px solid rgba(34, 36, 38, .15)
+            font-size: 12px
+            padding: 5px
+            min-height: 0
+            cursor: pointer
+            .text
+              display: flex
+              align-items: center
+            .flag, .icon
+              margin-right: 5px
+            .dropdown.icon
+              padding-top: 5px
+              margin-right: 0
+              right: 0
+            img
+              max-height: 1em
+              margin-right: 5px
+            input
+              cursor: pointer !important
+            input.search
+              padding: 5px
+            .text
+              cursor: pointer
+              > .label
+                margin-right: 2px
+
+          .ui.dropdown:not(.button) > .default.text
+            color: rgba(0, 0, 0, .87)
+          .menu > .item
+            padding: 5px !important
+            font-size: 12px
+            display: flex
+            align-items: center
+            .flag
+              margin-right: 5px
+
+    .col.wide
+      flex-basis: 41%
+  .modal-foot
+    .total-sum
+      text-align: right
+      font-size: 18px
+      font-weight: 700
+      span
+        font-size: 20px
+        color: #db2828
+        margin: 0 15px
+    .modal-save
+      display: flex
+      justify-content: center
+
+#tabs-panel-statusy
+  display: flex
+  padding: 0 10px
+  align-items: center
+  .tabs-arrow
+    flex-shrink: 0
+    cursor: pointer
+    z-index: 8
+  ul
+    z-index: 7
+    margin: 0 3px
+    flex-grow: 0
+    flex-shrink: 1
+    padding: 0
+    overflow: auto
+    overflow-x: hidden
+    overflow-y: hidden
+    list-style: none
+    display: flex
+    align-items: center
+    transition: .3s
+    li
+      display: block
+      white-space: nowrap
+
+#controls-settings-dropdown.ui.dropdown
+  .menu
+    font-size: 13px
+    > .item
+      font-size: 13px
+      padding: 10px 5px !important
+
+.main-table
+  margin: 10px 10px 0 10px
+  overflow-x: scroll
+  .ui.table
+    table-layout: fixed
+    thead
+      tr
+        th, td
+          position: sticky
+          top: 0
+          z-index: 5
+        td
+          top: 40px
+          background: white
+    th
+      text-align: center
+      white-space: nowrap
+      padding-left: 10px
+      padding-right: 10px
+      max-width: 100%
+    tr
+      td
+        padding: 5px !important
+        > .ui.input
+          width: 100%
+          input
+            padding: 5px
+      .main-table-dropdown.ui.dropdown
+        width: 100%
+        display: flex
+        justify-content: space-between
+        &:after
+          position: absolute
+          content: ''
+          bottom: -5px
+          width: 100%
+          height: 1px
+          border-bottom: 1px dashed lightgray
+        .menu
+          top: calc(100% + 10px)
+      .calendar-cell
+        display: flex
+        align-items: center
+        .ui.popup.calendar
+          z-index: 60
+        input
+          margin: 0 3px
+          padding: 5px
+          width: 47%
+
+    tbody
+      tr.row-sent
+        background: $yellow
+      tr.row-completed
+        background: $green
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-return, tr.row-return-on-way
+        background: $red
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-refuse
+        background: $pink
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-success
+        background: $teal
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-not-confirmed, tr.row-util
+        background: $brown
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-success-not-completed
+        background: $purple
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-money-on-way
+        background: $olive
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.row-on-control
+        background: $violet
+        color: white
+        .order-id
+          p
+            color: white
+
+      tr.active-row
+        background: $blue
+        color: white
+        td
+          &:first-child
+            border-left: 8px solid $dark-yellow
+        .order-id
+          p
+            color: white
+      tr
+        td
+          user-select: none
+          position: relative
+          cursor: default
+          transition: .3s
+          img
+            max-height: 1em
+          p
+            user-select: none
+            margin-bottom: 0
+            text-overflow: ellipsis
+            max-width: 100%
+            white-space: nowrap
+            overflow: hidden
+            font-size: 13px
+            vertical-align: middle
+          img
+            margin-right: 5px
+        .order-id
+          p
+            font-size: 11px
+            color: #999
+
+        .order-sum
+          font-weight: 900
+          text-align: right
+        .products-counter
+          background: orange
+          color: black
+          cursor: pointer
+          padding: 3px 5px
+          font-size: 12px
+          border-radius: 3px
+
+        .order-products
+          .ui.popup
+            ul, ol
+              padding: 0 0 0 12px
+              margin: 0
+            ul
+              list-style: disc
+
+.main-table-pagination
+  padding: 10px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  .page-orders-number
+    .ui.dropdown
+      min-width: 100px
+  .ui.dropdown:not(.button) > .default.text
+    color: rgba(0, 0, 0, .87)
+
+footer
+  margin-top: auto
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 10px
+  background: #E2EAF5
+  .footer-settings
+    display: flex
+    align-items: center
+    .language
+      display: flex
+      align-items: center
+      margin-right: 10px
+      b
+        margin-left: 8px
+        display: flex
+        align-items: center
+    .ws
+      display: flex
+      align-items: center
+
+.flex-block
+  display: flex
+
+.flex-block.align-items-center
+  align-items: center
+
+.ui.horizontal.divider
+  display: flex
+  align-items: center
+  .checkbox
+    margin-right: 10px
+
+.ui.horizontal.divider:after, .ui.horizontal.divider:before
+  display: flex
+  width: 50%
+  height: 1px
+
+.blink
+  animation: blink 1.5s linear infinite
+  font-size: 13px
+  letter-spacing: 0
+  padding: 1px 5px 3px
+  border-radius: 3px
+  display: inline-block
+  width: auto
+
+@keyframes blink
+  0%
+    color: #FFF
+    background: #F00
+  50%
+    color: white
+    background: white
+  100%
+    color: #FFF
+    background: #F00
+
+.modal-order-notification
