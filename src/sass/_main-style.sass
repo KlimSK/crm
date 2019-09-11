@@ -433,7 +433,7 @@ main
   right: 1rem
   color: rgba(0, 0, 0, .87)
 
-.modal-order
+.modal-order, .modal-product
   .modal-head
     display: flex
     align-items: center
@@ -450,6 +450,29 @@ main
   .order-container
     display: flex
     justify-content: space-between
+    .setting-subrow
+      display: flex
+      justify-content: space-between
+      .setting-subcol
+        flex-shrink: 0
+        flex-grow: 0
+        &:first-child
+          flex-basis: 65%
+        &:last-child
+          flex-basis: 34%
+
+    .ui.input
+      width: 100%
+      input, textarea
+        font-family: 'Lato'
+        padding: 5px
+        resize: none
+        width: 100%
+        font-size: 12px
+        border: none
+        border-bottom: 1px solid rgba(34, 36, 38, .15)
+        &:focus
+          border-bottom: 1px solid #4385c2
     .col
       flex-basis: 28%
       flex-shrink: 0
@@ -533,16 +556,7 @@ main
             opacity: 0.5
             a
               opacity: 1
-          .ui.input
-            width: 100%
-            input, textarea
-              font-family: 'Lato'
-              padding: 5px
-              font-size: 12px
-              border: none
-              border-bottom: 1px solid rgba(34, 36, 38, .15)
-              &:focus
-                border-bottom: 1px solid #4385c2
+
 
           .ui.dropdown
             width: 100%
@@ -586,6 +600,18 @@ main
 
     .col.wide
       flex-basis: 41%
+    .col-70
+      flex-basis: 55%
+      .order-setting-row
+        label
+          flex-basis: 27%
+          min-width: 155px
+        .order-setting
+          flex-basis: auto
+          flex-grow: 1
+
+    .col-30
+      flex-basis: 30%
   .modal-foot
     .total-sum
       text-align: right
@@ -659,6 +685,10 @@ main
           width: 100%
           input
             padding: 5px
+      .product-photo
+        img
+          max-height: none
+          max-width: 100%
       .main-table-dropdown.ui.dropdown
         width: 100%
         display: flex
@@ -694,11 +724,19 @@ main
 
       tr.row-return, tr.row-return-on-way
         background: $red
-        color: white
+        color: white !important
+        .green-text, .blue-text, .red-text
+          color: white
         .order-id
           p
             color: white
-
+      tr.row-lightred
+        background: $red-transparent
+        color: black !important
+        .green-text, .blue-text, .red-text
+          color: black
+        p
+          color: black !important
       tr.row-refuse
         background: $pink
         color: white
@@ -743,13 +781,17 @@ main
 
       tr.active-row
         background: $blue
-        color: white
+        color: white !important
+        p
+          color: white !important
+        .green-text, .blue-text, .red-text
+          color: white
         td
           &:first-child
             border-left: 8px solid $dark-yellow
         .order-id
           p
-            color: white
+            color: white !important
       tr
         td
           user-select: none
@@ -767,16 +809,30 @@ main
             overflow: hidden
             font-size: 13px
             vertical-align: middle
+          p.additional-info
+            font-size: 11px
+            color: #b3b2b2
           img
             margin-right: 5px
         .order-id
           p
             font-size: 11px
             color: #999
-
+        .product-status
+          label
+            &:before
+              background: #e0e0e0
+          input:checked~label:before
+            background: #21ba45 !important
         .order-sum
           font-weight: 900
           text-align: right
+          p
+            font-size: 14px
+        .discount
+          .old-price
+            text-decoration: line-through
+            margin-right: 3px
         .products-counter
           background: orange
           color: black

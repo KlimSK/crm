@@ -151,15 +151,14 @@ function tableDefinitions() {
 
     tableRowClick();
     orderModal();
+    productModal();
 }
 
 //Модальное окно заказа
 function orderModal() {
-    $('.main-table tbody tr').dblclick(function () {
+    $('.main-table.orders-table tbody tr').dblclick(function () {
         $('.modal-order.modal')
-            .modal({
-
-            })
+            .modal({})
             .modal('show');
     });
 
@@ -172,7 +171,7 @@ function orderModal() {
                 allowMultiple: true,
                 closable: true,
                 centered: true,
-                onShow: function(){
+                onShow: function () {
                     $('.modal-order').dimmer('show');
                 },
                 onHide: function () {
@@ -186,17 +185,25 @@ function orderModal() {
 
 }
 
+//Модальное окно товара
+function productModal() {
+    $('.main-table.products-table tbody tr').dblclick(function () {
+        $('.modal-product.modal')
+            .modal({})
+            .modal('show');
+    });
+}
+
+
 //Закрыть модальное окно
 function closeModalByDimmer(modal) {
 
-    $(document).mouseup(function(e)
-    {
+    $(document).mouseup(function (e) {
         var container = modal;
 
         // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0)
-        {
-           modal.modal('hide');
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            modal.modal('hide');
         }
     });
 }
