@@ -1,5 +1,5 @@
 body
-  font-family: 'Lato' !important
+  font-family: 'Yandex Sans Text' !important
 
 main
   display: flex
@@ -7,7 +7,7 @@ main
     min-height: 100vh
     width: 200px
     overflow: hidden
-
+    position: relative
     flex-shrink: 0
     background-color: $main-black
 
@@ -58,7 +58,6 @@ main
           border-radius: 2px
 
         > li
-          position: relative
           img
             max-width: 100%
 
@@ -337,6 +336,8 @@ main
     .content-control-buttons
       display: flex
       align-items: center
+      .add-order
+        padding: 7px
       .refresh-button
         display: flex
         height: 100%
@@ -349,9 +350,19 @@ main
       .refresh-time
         margin-right: 8px
         input
-          padding: 5px
+          padding: 2px 5px
           text-align: center
           max-width: 40px
+        .label
+          padding: 5px
+      .refresh-toggle
+        margin-top: 3px
+        label
+          &:before
+            height: 1.3rem
+          &:after
+            height: 1.3rem
+            width: 1.3rem
 
 .ui.inverted.popup.tariff-popup
   b
@@ -542,6 +553,12 @@ main
           flex-basis: 62%
           flex-shrink: 0
           flex-grow: 0
+          display: flex
+          align-items: center
+          .input-setting
+            flex-shrink: 0
+            font-size: 12px
+            margin-left: 7px
           .setting-info
             margin-bottom: 0
             font-size: 12px
@@ -669,14 +686,22 @@ main
           position: sticky
           top: 0
           z-index: 5
+          border-left: none
+          border-top: none
+          border-bottom: 1px solid rgba(0, 0, 0, .1)
+          border-right: 1px solid rgba(0, 0, 0, .1)
+          font-size: 13px
+          &:first-child
+            left: 0
+            z-index: 10
         td
-          top: 40px
+          top: 33px
           background: white
+
     th
       text-align: center
       white-space: nowrap
-      padding-left: 10px
-      padding-right: 10px
+      padding: 8px
       max-width: 100%
     tr
       td
@@ -684,7 +709,7 @@ main
         > .ui.input
           width: 100%
           input
-            padding: 5px
+            padding: 2px 5px
       .product-photo
         img
           max-height: none
@@ -709,75 +734,11 @@ main
           z-index: 60
         input
           margin: 0 3px
-          padding: 5px
+          padding: 2px 5px
           width: 47%
 
     tbody
-      tr.row-sent
-        background: $yellow
-      tr.row-completed
-        background: $green
-        color: white
-        .order-id
-          p
-            color: white
 
-      tr.row-return, tr.row-return-on-way
-        background: $red
-        color: white !important
-        .green-text, .blue-text, .red-text
-          color: white
-        .order-id
-          p
-            color: white
-      tr.row-lightred
-        background: $red-transparent
-        color: black !important
-        .green-text, .blue-text, .red-text
-          color: black
-        p
-          color: black !important
-      tr.row-refuse
-        background: $pink
-        color: white
-        .order-id
-          p
-            color: white
-
-      tr.row-success
-        background: $teal
-        color: white
-        .order-id
-          p
-            color: white
-
-      tr.row-not-confirmed, tr.row-util
-        background: $brown
-        color: white
-        .order-id
-          p
-            color: white
-
-      tr.row-success-not-completed
-        background: $purple
-        color: white
-        .order-id
-          p
-            color: white
-
-      tr.row-money-on-way
-        background: $olive
-        color: white
-        .order-id
-          p
-            color: white
-
-      tr.row-on-control
-        background: $violet
-        color: white
-        .order-id
-          p
-            color: white
 
       tr.active-row
         background: $blue
@@ -786,6 +747,8 @@ main
           color: white !important
         .green-text, .blue-text, .red-text
           color: white
+        .status-cell
+          background: $blue
         td
           &:first-child
             border-left: 8px solid $dark-yellow
@@ -793,11 +756,34 @@ main
           p
             color: white !important
       tr
+        .status-cell
+          text-align: center
+          background: #fff
+          position: sticky
+          left: 0
+          top: 0
+          z-index: 5
+          .status
+            transition: .3s
+            padding: 4px 5px
+            cursor: auto
+            font-size: 10px
+            text-overflow: ellipsis
+            white-space: nowrap
+            width: 80%
+            overflow: hidden
+            &:hover
+              transform: scale(1.1)
         td
           user-select: none
           position: relative
           cursor: default
           transition: .3s
+          border-left: none
+          border-top: none
+          border-bottom: 1px solid rgba(0, 0, 0, .1)
+          border-right: 1px solid rgba(0, 0, 0, .1)
+
           img
             max-height: 1em
           p
@@ -807,7 +793,7 @@ main
             max-width: 100%
             white-space: nowrap
             overflow: hidden
-            font-size: 13px
+            font-size: 12px
             vertical-align: middle
           p.additional-info
             font-size: 11px
@@ -816,7 +802,7 @@ main
             margin-right: 5px
         .order-id
           p
-            font-size: 11px
+            font-size: 10px
             color: #999
         .product-status
           label
@@ -828,7 +814,7 @@ main
           font-weight: 900
           text-align: right
           p
-            font-size: 14px
+            font-size: 13px
         .discount
           .old-price
             text-decoration: line-through
@@ -850,13 +836,18 @@ main
               list-style: disc
 
 .main-table-pagination
-  padding: 10px
+  padding: 5px
+  font-size: 12px
   display: flex
   align-items: center
   justify-content: space-between
   .page-orders-number
     .ui.dropdown
-      min-width: 100px
+      min-width: 60px
+      min-height: 0
+      padding: 5px 10px
+      .icon
+        padding: 5px
   .ui.dropdown:not(.button) > .default.text
     color: rgba(0, 0, 0, .87)
 
@@ -865,7 +856,8 @@ footer
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 10px
+  padding: 5px 10px
+  font-size: 12px
   background: #E2EAF5
   .footer-settings
     display: flex
@@ -913,8 +905,8 @@ footer
     color: #FFF
     background: #F00
   50%
-    color: white
-    background: white
+    color: #FFF
+    background: transparent
   100%
     color: #FFF
     background: #F00

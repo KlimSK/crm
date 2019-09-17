@@ -24,10 +24,21 @@ function fonts() {
         .pipe(gulp.dest('./build/fonts'))
 }
 function libs() {
-    return gulp.src('./src/libs/**/*.js')
+    /*return gulp.src(['./src/libs/!**!/!*.js', './src/libs/!**!/!*.min.js'])
         .pipe(concat('libs.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./build/js'))
+        .pipe(browserSync.stream());*/
+
+    return gulp.src('./src/libs/**')
+        .pipe(gulp.dest('./build/libs'))
+        .pipe(browserSync.stream());
+
+}
+
+function html(){
+    return gulp.src(['./src/**/*.html', './src/**/*.php'])
+        .pipe(gulp.dest('./build'))
         .pipe(browserSync.stream());
 }
 
@@ -51,9 +62,7 @@ function imgCompress() {
 
 function watch() {
     browserSync.init({
-        server: {
-            baseDir: "./"
-        }
+        proxy: "new-crm.test"
     });
 
 
@@ -61,15 +70,16 @@ function watch() {
     gulp.watch('./src/sass/**/*.sass', styles);
     gulp.watch('./src/sass/**/*.scss', styles);
     gulp.watch('./src/js/**/*.js', custom_scripts);
-    gulp.watch('./**/*.html').on('change', browserSync.reload);
+    gulp.watch('./src/**/*.html', html);
+    gulp.watch('./src/**/*.php', html);
 }
 
 
-gulp.task('conc', gulp.series(styles, libs, custom_scripts, fonts));
+gulp.task('conc', gulp.series(html, styles, libs, custom_scripts, fonts));
 
 gulp.task('watch', watch);
 
-gulp.task('build', gulp.parallel(styles, libs, custom_scripts, fonts, imgCompress));
+gulp.task('build', gulp.parallel(html, styles, libs, custom_scripts, fonts, imgCompress));
 
 gulp.task('dev', gulp.series('build', 'watch'));
 

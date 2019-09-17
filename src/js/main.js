@@ -25,6 +25,9 @@ function sidebarMenuControls() {
             $('.main-menu ul>li.active').removeClass('active');
             elem.addClass('active');
             elem.find('>ul').css('height', 'auto');
+
+            console.log(elem.position().top);
+            elem.find('>ul').css('top', elem.position().top);
             var autoHeight = elem.find('>ul').css('height');
             elem.find('>ul').css('height', '0').animate({height: autoHeight}, 400);
         }
@@ -65,6 +68,7 @@ function sidebarMenuControls() {
             $('.main-menu ul>li.active>ul').animate({height: '0'}, 400);
 
 
+            //
             if ($('.main-menu ul>li.active>ul').length) {
                 setTimeout(function () {
                     el.addClass('active');
