@@ -119,20 +119,18 @@ function headerDefinitions() {
     $('.modal-contacts.modal')
         .modal('attach events', '#header-contacts', 'show');
 
-    $('#controls-settings-dropdown')
-        .dropdown();
 
 
     $('.ui.dropdown').each(function () {
-        $(this).dropdown();
+        $(this).dropdown({
+            fullTextSearch: true
+        });
     });
 }
 
 
 function tableDefinitions() {
-    $('.main-table-dropdown').each(function () {
-        $(this).dropdown();
-    });
+
     $('.order-products').each(function () {
         $(this).find('.products-counter').popup({
             popup: $(this).find('.ui.popup'),
@@ -141,11 +139,8 @@ function tableDefinitions() {
         });
     });
 
-    $('.modal-order .order-container .order-setting .ui.dropdown').each(function () {
-        $(this).dropdown();
-    });
 
-    $('.page-orders-number .ui.dropdown').dropdown();
+
 
 
     initSemanticCalendar($('#send-from'), $('#send-to'));
@@ -166,10 +161,12 @@ function orderModal() {
             .modal('show');
     });
 
-    var modalOrderNotif = $('.modal-order-notification');
+    var secondaryModal = $('.secondary-modal');
 
-    $('#create-notification').click(function () {
-        modalOrderNotif
+
+    $('.open-secondary-modal').click(function () {
+        var id = $(this).attr('data-modal-target');
+        $('#' + id)
             .modal({
 
                 allowMultiple: true,
@@ -185,7 +182,6 @@ function orderModal() {
             .modal('show');
     });
 
-    closeModalByDimmer(modalOrderNotif);
 
 }
 
@@ -408,4 +404,28 @@ function mainMenuHeight() {
     var logo = $('.header-logo').height();
 
     nav.css('max-height', 'calc(100vh - ' + logo + 'px)');
+}
+
+
+function alertMessage(type, head, text, time, icon) {
+    var bgColor = '#55a9ee';
+    if (type == "danger")
+        bgColor = "#DB2828";
+    else if(type == "warning")
+        bgColor = "#F2711C";
+    else if (type == "success")
+        bgColor = "#19c3aa";
+
+
+    if(type && head && text) {
+        $.uiAlert({
+            textHead: head, // header
+            text: text, // Text
+            bgcolor: bgColor, // background-color
+            textcolor: '#fff', // color
+            position: 'top-right',// position . top And bottom ||  left / center / right
+            icon: icon ? icon : 'checkmark box', // icon in semantic-UI
+            time: time ? time : 5 // time
+        });
+    }
 }

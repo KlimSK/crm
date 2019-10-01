@@ -37,7 +37,7 @@
 
         <div class="info-row">
             <p>E-mail:</p>
-            <p><a href="mailto:web-master-alex@mail.ru">web-master-alex@mail.ru</a></p>
+            <p><a href="">web-master-alex@mail.ru</a></p>
         </div>
     </div>
 
@@ -240,13 +240,13 @@
             <td>Telegram (канал)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
+                        href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
         </tr>
         <tr>
             <td>Telegram (техподдержка)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
+                        href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
         </tr>
         <tr>
             <td>Блог CRM</td>
@@ -257,8 +257,8 @@
         <tr>
             <td>YouTube</td>
             <td><i class="fab fa-youtube-square" style="color:#DC212F;"></i><a
-                    href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
-                    target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
+                        href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
+                        target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
         </tr>
         <tr>
             <td>Киевстар</td>
@@ -299,7 +299,9 @@
     </div>
 
     <div class="modal-order-buttons">
-        <button id="create-notification" class="ui labeled icon button mini"><i class="bell icon"></i> Напомнить</button>
+        <button id="create-notification" class="ui labeled icon button mini open-secondary-modal"
+                data-modal-target="modal-order-notification"><i class="bell icon"></i> Напомнить
+        </button>
         <button class="ui labeled icon button mini"><i class="envelope icon"></i> SMS</button>
         <div class="ui floating dropdown labeled icon button mini">
             <i class="phone icon"></i>
@@ -311,8 +313,8 @@
         </div>
     </div>
 
-    <div class="order-container">
-        <div class="col">
+    <div class="ui grid">
+        <div class="five wide column">
 
             <div class="order-setting-block">
                 <div class="ui horizontal divider">Контактная информация</div>
@@ -594,7 +596,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <div class="five wide column">
             <div class="order-setting-block">
                 <div class="ui horizontal divider">Доставка</div>
 
@@ -682,7 +684,9 @@
                         <div class="ui input">
                             <input type="text" placeholder="">
                         </div>
-                        <a href="#" class="input-setting">создать</a>
+                        <a href="#" class="input-setting open-secondary-modal" data-modal-target="modal-create-ttn">
+                            создать
+                        </a>
 
                     </div>
                 </div>
@@ -834,7 +838,7 @@
 
             </div>
         </div>
-        <div class="col wide">
+        <div class="six wide column">
             <div class="order-setting-block">
                 <div class="ui horizontal divider">Товар</div>
 
@@ -903,7 +907,8 @@
                     <div class="ui toggle checkbox">
                         <input type="checkbox" name="refresh">
                         <label for=""></label>
-                    </div> Допродажа
+                    </div>
+                    Допродажа
                 </div>
 
                 <table class="ui table modal-order-products">
@@ -971,7 +976,7 @@
 </div>
 
 
-<div class="ui modal tiny modal-order-notification">
+<div class="ui modal tiny modal-order-notification secondary-modal" id="modal-order-notification">
     <i class="close icon"></i>
 
     <h2 class="modal-title">
@@ -1049,10 +1054,773 @@
 </div>
 
 
-<div class="ui modal modal-create-ttn">
+<div class="ui modal large modal-create-ttn secondary-modal main-modal" id="modal-create-ttn">
+
+
+    <?
+    $servername = "localhost";
+    $username = "mysql";
+    $password = "mysql";
+
+    $db = mysqli_connect($servername, $username, $password);
+
+    //Connection to novaposhta database
+    mysqli_select_db($db, 'novaposhta');
+    ?>
+
+
     <i class="close icon"></i>
 
     <h2 class="modal-title">
-        Создать напоминание
+        Создание декларации Новой Почты
     </h2>
+
+    <form action="" id="novaposhta" method="post">
+        <div class="ui grid">
+            <div class="eight wide column">
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Технологія відправлення</div>
+
+                    <div class="order-setting-row">
+                        <label for="ServiceTypes">
+                            Технологія доставки
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <input type="hidden" name="ServiceTypes" id="ServiceTypes" value="WarehouseWarehouse">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    Відділення-Відділення
+                                </div>
+                                <div class="menu">
+
+                                    <div class="item" data-value="WarehouseWarehouse">
+                                        Відділення-Відділення
+                                    </div>
+                                    <div class="item" data-value="WarehouseDoors">
+                                        Відділення-Адреса
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Відправник</div>
+
+
+                    <div class="order-setting-row">
+                        <label for="Counterparties">
+                            Контрагент
+
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <?
+                                mysqli_select_db($db, 'testcrm');
+                                $counterparties = mysqli_query($db, 'SELECT Ref, Description, CityDescription FROM `mod_nova_poshta_counterparties`');
+
+                                $counterparties = mysqli_fetch_all($counterparties, MYSQLI_ASSOC);
+                                ?>
+
+                                <input type="hidden" name="Counterparties" id="Counterparties"
+                                       value="<?= $counterparties[0]['Ref'] ?>">
+                                <span class="text">
+                                    <?= $counterparties[0]['Description'] . " (" . $counterparties[0]['CityDescription'] . ")" ?>
+                                </span>
+                                <i class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+
+                                        <?
+                                        foreach ($counterparties as $row) {
+                                            ?>
+                                            <div class="item"
+                                                 data-value="<?= $row['Ref'] ?>"><?= $row['Description'] . ' (' . $row['CityDescription'] . ')' ?></div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Відправник контрагента
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <?
+                                mysqli_select_db($db, 'testcrm');
+                                $counter_party_persons = mysqli_query($db, 'SELECT Description, Ref, Phones FROM `mod_nova_poshta_counterpartycontactpersons`');
+
+                                $counter_party_persons = mysqli_fetch_all($counter_party_persons, MYSQLI_ASSOC);
+                                ?>
+                                <input type="hidden" name="CounterpartyContactPersons" id="CounterpartyContactPersons"
+                                       value="<?= $counter_party_persons[0]['Ref'] ?>|<?= $counter_party_persons[0]['Phones']; ?>">
+                                <span class="text"><?= $counter_party_persons[0]['Description'] ?>
+                                    (<?= $counter_party_persons[0]['Phones']; ?>)</span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск..." value="">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+                                        <?
+                                        foreach ($counter_party_persons as $row) { ?>
+                                            <div class="item" data-value="<?= $row['Ref'] ?>|<?= $row['Phones']; ?>">
+                                                <?= $row['Description'] ?> (<?= $row['Phones']; ?>)
+                                            </div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Населений пункт
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+
+                                $cities = mysqli_query($db, 'SELECT Ref, Description FROM `cities`');
+
+                                $city_list = mysqli_fetch_all($cities, MYSQLI_ASSOC);
+
+                                ?>
+
+                                <input type="hidden" name="counterparty_sender"
+                                       id="counterparty_sender" value="<?= $city_list[0]['Ref'] ?>">
+                                <span class="text"><?= $city_list[0]['Description'] ?></span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+
+                                        <? foreach ($city_list as $row) { ?>
+                                            <div class="item"
+                                                 data-value="<?= $row['Ref'] ?>"><?= $row['Description'] ?></div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Адреса або Відділення
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <input type="hidden" name="SenderAddress" id="SenderAddress">
+                                <span class="text"></span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu" id="SenderAddressList">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" name="SenderWarehouseType" id="SenderWarehouseType">
+                </div>
+
+
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Одержувач</div>
+
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Контактна особа
+
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="RecipientName" id="RecipientName" value="Луценко Олександр"
+                                       disabled placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Телефон
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="RecipientPhone" id="RecipientPhone" value="0961234567" disabled
+                                       placeholder="">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Населений пункт
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+
+                                <input type="hidden" name="CityRecipient" id="CityRecipient" value="">
+                                <span class="text">- Оберіть населений пункт -</span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+
+                                        <? foreach ($city_list as $row) { ?>
+                                            <div class="item"
+                                                 data-value="<?= $row['Ref'] ?>"><?= $row['Description'] ?></div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Адреса або Відділення
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <input type="hidden" name="RecipientAddress" id="RecipientAddress">
+                                <span class="text">- Оберiть спочатку населенний пункт отримувача -</span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu" id="RecipientAddressList">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <input type="hidden" name="RecipientWarehouseType" id="RecipientWarehouseType">
+                </div>
+
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Параметри відправлення</div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Платник відправлення
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $typesOfPayers = mysqli_query($db, 'SELECT Ref, Description FROM `typesofpayers`');
+
+                                $typesOfPayers = mysqli_fetch_all($typesOfPayers, MYSQLI_ASSOC);
+                                ?>
+
+                                <input type="hidden" name="TypesOfPayers" id="TypesOfPayers"
+                                       value="<?= $typesOfPayers[0]['Ref'] ?>">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $typesOfPayers[0]['Description'] ?>
+                                </div>
+                                <div class="menu">
+
+                                    <? foreach ($typesOfPayers as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Платник зворотної доставки
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $typesOfPayersForRedelivery = mysqli_query($db, 'SELECT Ref, Description FROM `typesofpayers`');
+                                $typesOfPayersForRedelivery = mysqli_fetch_all($typesOfPayersForRedelivery, MYSQLI_ASSOC);
+                                ?>
+                                <input type="hidden" value="<?= $typesOfPayersForRedelivery[1]['Description'] ?>"
+                                       name="TypesOfPayersForRedelivery" id="TypesOfPayersForRedelivery">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $typesOfPayersForRedelivery[1]['Description'] ?>
+                                </div>
+                                <div class="menu">
+                                    <? foreach ($typesOfPayersForRedelivery as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Форма оплати
+                        </label>
+
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $paymentForm = mysqli_query($db, 'SELECT Ref, Description FROM `paymentform`');
+                                $paymentForm = mysqli_fetch_all($paymentForm, MYSQLI_ASSOC);
+                                ?>
+                                <input type="hidden" name="PaymentForm" id="PaymentForm"
+                                       value="<?= $paymentForm[0]['Description'] ?>">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $paymentForm[0]['Description'] ?>
+                                </div>
+                                <div class="menu">
+                                    <? foreach ($paymentForm as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Дата відправки
+                        </label>
+
+                        <div class="order-setting">
+                            <?
+                            $today = date('d.m.Y', mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+                            $tomorrow = date('d.m.Y', mktime(0, 0, 0, date("m"), date("d") + 1, date("Y")));
+                            $afterTomorrow = date('d.m.Y', mktime(0, 0, 0, date("m"), date("d") + 2, date("Y")));
+                            ?>
+                            <div class="ui fluid selection dropdown">
+                                <input type="hidden" name="DateDeliverySend" id="DateDeliverySend"
+                                       value="<?= $today ?>">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    Сьогодні (<?= $today ?>)
+                                </div>
+                                <div class="menu">
+
+                                    <div class="item" data-value="<?= $today ?>">
+                                        Сьогодні(<?= $today ?>)
+                                    </div>
+                                    <div class="item" data-value="<?= $tomorrow ?>">
+                                        Завтра(<?= $tomorrow ?>)
+                                    </div>
+
+                                    <div class="item" data-value="<?= $afterTomorrow ?>">
+                                        Післязавтра(<?= $afterTomorrow ?>)
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Тип доставки
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $cargoTypes = mysqli_query($db, 'SELECT Ref, Description FROM `cargotypes`');
+                                $cargoTypes = mysqli_fetch_all($cargoTypes, MYSQLI_ASSOC);
+                                ?>
+                                <input type="hidden" value="<?= $cargoTypes[0]['Ref'] ?>"
+                                       name="CargoTypes" id="CargoTypes">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $cargoTypes[0]['Description'] ?>
+                                </div>
+                                <div class="menu">
+                                    <? foreach ($cargoTypes as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="">
+                            Опис відправлення
+
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $cargoDescriptionList = mysqli_query($db, 'SELECT Ref, Description FROM `cargodescriptionlist`');
+                                $cargoDescriptionList = mysqli_fetch_all($cargoDescriptionList, MYSQLI_ASSOC);
+                                ?>
+
+                                <input type="hidden" value="<?= $cargoDescriptionList[0]['Ref'] ?>"
+                                       name="CargoDescriptionList" id="CargoDescriptionList">
+                                <span class="text"><?= $cargoDescriptionList[0]['Description'] ?></span>
+                                <i class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+                                        <? foreach ($cargoDescriptionList as $row) { ?>
+                                            <div class="item" data-value="<?= $row['Ref'] ?>">
+                                                <?= $row['Description'] ?>
+                                            </div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="eight wide column">
+                <div class="order-setting-block">
+                    <div class="order-setting-row">
+                        <label for="">
+                            Тип доставки
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $cargoTypes = mysqli_query($db, 'SELECT Ref, Description FROM `cargotypes`');
+                                $cargoTypes = mysqli_fetch_all($cargoTypes, MYSQLI_ASSOC);
+                                ?>
+                                <input type="hidden" value="<?= $cargoTypes[0]['Ref'] ?>"
+                                       name="CargoTypes" id="CargoTypes">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $cargoTypes[0]['Description'] ?>
+                                </div>
+                                <div class="menu">
+                                    <? foreach ($cargoTypes as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="">
+                            Опис відправлення
+
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui dropdown mini main-table-dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $cargoDescriptionList = mysqli_query($db, 'SELECT Ref, Description FROM `cargodescriptionlist`');
+                                $cargoDescriptionList = mysqli_fetch_all($cargoDescriptionList, MYSQLI_ASSOC);
+                                ?>
+
+                                <input type="hidden" value="<?= $cargoDescriptionList[0]['Ref'] ?>"
+                                       name="CargoDescriptionList" id="CargoDescriptionList">
+                                <span class="text"><?= $cargoDescriptionList[0]['Description'] ?></span>
+                                <i class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu">
+                                        <? foreach ($cargoDescriptionList as $row) { ?>
+                                            <div class="item" data-value="<?= $row['Ref'] ?>">
+                                                <?= $row['Description'] ?>
+                                            </div>
+                                        <? } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Штрих-код RedBox
+
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" value="" name="RedBoxBarcode" id="RedBoxBarcode" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="order-setting-row flex-block justify-space-around">
+                        <div class="ui mini right labeled input">
+                            <label for="amount" class="ui label">Ширина</label>
+                            <input type="text" value="12" name="width" id="width">
+                            <div class="ui basic label">см</div>
+                        </div>
+                        <div class="ui mini right labeled input">
+                            <label for="amount" class="ui label">Висота</label>
+                            <input type="text" value="6" name="height" id="height">
+                            <div class="ui basic label">см</div>
+                        </div>
+                        <div class="ui mini right labeled input">
+                            <label for="amount" class="ui label">Довжина</label>
+                            <input type="text" value="4" name="length" id="length">
+                            <div class="ui basic label">см</div>
+                        </div>
+                    </div>
+
+
+                    <div class="order-setting-row flex-block justify-space-around">
+                        <div class="ui mini right labeled input">
+                            <label for="amount" class="ui label">Загальна вага</label>
+                            <input type="text" value="1" name="weight" id="weight">
+                            <div class="ui basic label">кг</div>
+                        </div>
+                        <div class="ui mini right labeled input">
+                            <label for="amount" class="ui label">Кількість місць</label>
+                            <input type="text" value="1" name="SeatsAmount" id="SeatsAmount">
+                            <div class="ui basic label">шт.</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Вага об'ємна
+
+                        </label>
+                        <div class="order-setting min-order-setting">
+                            <div class="ui input ">
+                                <input class="readonly" name="VolumeWeight" id="VolumeWeight" type="text" value="0.1"
+                                       readonly placeholder="">
+
+                            </div>
+                            <span>кг</span>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Загальний об'єм
+
+                        </label>
+                        <div class="order-setting min-order-setting">
+                            <div class="ui input ">
+                                <input class="readonly" name="VolumeGeneral" id="VolumeGeneral" type="text"
+                                       value="0.0004" readonly placeholder="">
+
+                            </div>
+                            <span>м<sup>3</sup></span>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="" class="align-self-start">
+                            Додаткова информація
+                        </label>
+                        <div class="order-setting flex-column">
+                            <div class="ui input">
+                                <textarea type="text" name="AdditionalInformation" id="AdditionalInformation" rows="4"
+                                          placeholder=""></textarea>
+                            </div>
+                            <p class="input-note align-self-end mt-3 mb-0">*максимально 100 символів (<span
+                                        class="red-text">0</span>)</p>
+
+                            <p class="input-note align-self-end mt-1">
+                                вставить из заказа: <a href="#">комментарий</a> или <a href="#">товар(ы)</a>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row justify-space-between mt-1">
+                        <p class="nova-poshta-info">
+                            Дата доставки: <span id="deliveryDate">-</span>
+                        </p>
+
+                        <p class="nova-poshta-info">
+                            Сума доставки: <span id="deliveryCost">-</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">
+                        <div class="ui toggle checkbox">
+                            <input type="checkbox" name="backwardDelivery" id="backwardDelivery">
+                            <label for=""></label>
+                        </div>
+                        Зворотня доставка
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Зворотня доставка
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid selection dropdown">
+                                <?
+                                mysqli_select_db($db, 'novaposhta');
+                                $backwardCargoTypes = mysqli_query($db, 'SELECT Ref, Description FROM `cargodescriptionlist`');
+                                $backwardCargoTypes = mysqli_fetch_all($backwardCargoTypes, MYSQLI_ASSOC);
+                                ?>
+
+                                <input type="hidden" value="<?= $backwardCargoTypes[0]['Ref'] ?>"
+                                       name="BackwardDeliveryCargoTypes" id="BackwardDeliveryCargoTypes">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">
+                                    <?= $backwardCargoTypes[0]['Description'] ?>
+                                </div>
+                                <div class="menu">
+                                    <? foreach ($backwardCargoTypes as $row) { ?>
+                                        <div class="item" data-value="<?= $row['Ref'] ?>">
+                                            <?= $row['Description'] ?>
+                                        </div>
+                                    <? } ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Сума зворотньої доставки
+
+                        </label>
+                        <div class="order-setting min-order-setting">
+                            <div class="ui mini input">
+                                <input type="text" name="Price" id="Price" value="1000">
+                            </div>
+                            <span>грн</span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">
+                        <div class="ui toggle checkbox">
+                            <input type="checkbox" name="checkScansheet" id="checkScansheet">
+                            <label for=""></label>
+                        </div>
+                        Реєстри
+                    </div>
+
+
+                    <div class="order-setting-row">
+                        <label for="ScansheetList">Реєстри</label>
+                        <div class="order-setting">
+                            <div class="ui fluid dropdown mini main-table-dropdown">
+                                <input type="hidden" value="new" name="ScansheetList" id="ScansheetList">
+                                <span class="text">- Додати в новий реєстр -</span> <i
+                                        class="ui icon caret down"></i>
+                                <div class="menu">
+                                    <div class="ui icon search input">
+                                        <i class="search icon"></i>
+                                        <input type="text" placeholder="Поиск...">
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="scrolling menu" id="ScansheetsListOrder">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-foot">
+            <div class="modal-save">
+                <button type="submit" class="ui labeled icon small red button">
+                    <i class="file alternate icon"></i>
+                    Створити декларацію
+                </button>
+            </div>
+        </div>
+    </form>
+
 </div>
