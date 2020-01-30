@@ -1,5 +1,5 @@
 <header>
-    <div class="header-info">
+    <div class="header-info" >
         <div class="header-tariff">
             Тариф: <span class="tariff-type">Тестовый</span>
             <i class="fas fa-info-circle ui tariff-popup-info" data-inverted=""></i>
@@ -10,11 +10,11 @@
                 Цена/месяц:<b>0.00</b> грн. (~<b>0.00</b> руб.) ~<b>0.00</b> $
             </div>
 
-            <span class="all-tariffs" id="all-tariffs">
+            <span class="all-tariffs" id="all-tariffs" data-modal-target="modal-tariffs">
                         тарифы
                     </span>
 
-            <span class="header-contacts" id="header-contacts">
+            <span class="header-contacts" id="header-contacts" data-modal-target="modal-contacts">
                         КОНТАКТЫ
                     </span>
         </div>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="control-block">
-            <a href="#" id="about-site">
+            <a href="#" id="about-site" data-modal-target="modal-about-site">
                 <i class="fas fa-info-circle"></i>
             </a>
         </div>

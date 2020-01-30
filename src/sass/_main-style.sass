@@ -283,6 +283,8 @@ main
         .order-id
           p
             color: white !important
+        a
+          color: white
       tr
         .status-cell
           text-align: center
@@ -292,17 +294,17 @@ main
           top: 0
           z-index: 5
           transition: none
-          .status
-            transition: .3s
-            padding: 4px 5px
-            cursor: auto
-            font-size: 10px
-            text-overflow: ellipsis
-            white-space: nowrap
-            width: 80%
-            overflow: hidden
-            &:hover
-              transform: scale(1.1)
+        .status
+          transition: .3s
+          padding: 4px 5px
+          cursor: auto
+          font-size: 10px
+          text-overflow: ellipsis
+          white-space: nowrap
+          width: 80%
+          overflow: hidden
+          &:hover
+            transform: scale(1.1)
         td
           user-select: none
           position: relative
@@ -332,7 +334,6 @@ main
         .order-id
           p
             font-size: 10px
-            color: #999
         .product-status
           label
             &:before
@@ -441,3 +442,10 @@ footer
   min-width: 0
   .item
     white-space: normal
+
+.ui.bottom.pointing.bottom.dropdown>.menu
+  margin-bottom: 0
+
+
+.ui-alert-content
+  max-width: 400px !important

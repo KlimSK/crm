@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
 <main>
     <? include('sidebar.php'); ?>
 
@@ -72,7 +71,8 @@
                         </div>
                     </div>
 
-                    <button class="ui labeled icon button tiny green add-order"><i class="plus icon"></i> Добавить</button>
+                    <button class="ui labeled icon button tiny green add-order"><i class="plus icon"></i> Добавить
+                    </button>
                 </div>
             </div>
 
@@ -102,10 +102,10 @@
                        onclick="TabStatus('43');">Успешно выполнено (<b>1</b>)</a></li>
                 <li><a href="javascript:void(0);" class="button ui mini brown"
                        id="tab-status-45" onclick="TabStatus('45');">
-                    Не подтвержденные (<b>1</b>)</a></li>
+                        Не подтвержденные (<b>1</b>)</a></li>
                 <li><a href="javascript:void(0);" class="button ui mini purple"
                        id="tab-status-44" onclick="">
-                    Успешно не выполнено (<b>0</b>)</a></li>
+                        Успешно не выполнено (<b>0</b>)</a></li>
                 <li><a href="javascript:void(0);" id="tab-status-36" class="button ui mini red"
                        data-src="" onclick="TabStatus('36');">Возврат товара в пути (<b>2</b>)</a></li>
                 <li><a href="javascript:void(0);" id="tab-status-40" class="button ui mini"
@@ -127,7 +127,7 @@
             <table class=" ui table blue celled">
                 <thead>
                 <tr>
-                    <th width="110">Статус</th>
+                    <!--<th width="110">Статус</th>-->
                     <th width="65">id</th>
                     <th width="85">order_id</th>
                     <th width="200">Покупатель</th>
@@ -465,14 +465,18 @@
 
                 <tbody>
                 <tr>
-                    <td class="status-cell">
+                    <!--<td class="status-cell">
                         <div class="ui button tiny red status blink">
                             Новый
                         </div>
-                    </td>
+                    </td>-->
                     <td><p>262474</p></td>
                     <td class="order-id">
-                        <p>15592194228</p>
+                        <div class="flex-block justify-center">
+                            <div class="ui button tiny red status blink">
+                                Новый
+                            </div>
+                        </div>
                     </td>
                     <td><p>Админ</p></td>
                     <td>
@@ -565,12 +569,12 @@
                     <td><p></p></td>
                 </tr>
 
-                <tr class="row-sent">
-                    <td class="status-cell">
+                <tr class="row-yellow">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -580,7 +584,7 @@
                         </p>
                     </td>
                     <td><p class="flex-block align-items-center"><img src="img/operators/kyivstar.ico" alt=""> <a
-                            href="#">+380981234567</a></p></td>
+                                    href="#">+380981234567</a></p></td>
                     <td><p><i class="ui icon info"></i> test</p></td>
                     <td class="order-sum"><p>500.00</p></td>
                     <td class="order-products">
@@ -664,12 +668,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-completed">
-                    <td class="status-cell">
-                        <div class="ui button tiny teal status" title="Успешно выполнен">
-                            Успешно выполнен
-                        </div>
-                    </td>
+                <tr class="row-green">
+                    <!-- <td class="status-cell">
+                         <div class="ui button tiny teal status" title="Успешно выполнен">
+                             Успешно выполнен
+                         </div>
+                     </td>-->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -762,12 +766,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-return">
-                    <td class="status-cell">
+                <tr class="row-red">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -860,12 +864,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-refuse">
-                    <td class="status-cell">
+                <tr class="row-pink">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -958,12 +962,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-success">
-                    <td class="status-cell">
+                <tr class="row-teal">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1056,12 +1060,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-not-confirmed">
-                    <td class="status-cell">
+                <tr class="row-brown">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1154,12 +1158,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-success-not-completed">
-                    <td class="status-cell">
+                <tr class="row-purple">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1252,12 +1256,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-return-on-way">
-                    <td class="status-cell">
+                <tr class="row-olive">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1351,11 +1355,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr class="row-odessa">
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1448,12 +1452,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-money-on-way">
-                    <td class="status-cell">
+                <tr class="row-violet">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1546,12 +1550,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-on-control">
-                    <td class="status-cell">
+                <tr class="row-green">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1644,110 +1648,12 @@
                     <td><p></p></td>
                     <td><p></p></td>
                 </tr>
-                <tr class="row-util">
-                    <td class="status-cell">
+                <tr class="row-teal">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
-                    <td><p>262474</p></td>
-                    <td class="order-id"><p>15592194228</p></td>
-                    <td><p>Админ</p></td>
-                    <td>
-                        <p class="flex-block align-items-center">
-                            <img src="img/UA.ico" alt=""> Украина
-                        </p>
-                    </td>
-                    <td><p><i class="ui icon phone"></i> 35287523875</p></td>
-                    <td><p><i class="ui icon info"></i> test</p></td>
-                    <td class="order-sum"><p>500.00</p></td>
-                    <td class="order-products">
-                        <p>
-                            <span class="products-counter ui">2</span>
-                            мышь (1шт. x 10.00 = 10.00)~
-                        </p>
-                        <div class="ui popup">
-                            <ul>
-                                <li>мышь (1шт. x 10.00 = 10.00)~</li>
-                                <li>блендер (1шт. x 10.00 = 10.00)~</li>
-                            </ul>
-                        </div>
-
-
-                    </td>
-                    <td>
-                        <p class="flex-block align-items-center">
-                            <img src="img/money.ico" alt="">
-                            Оплачено
-                        </p>
-
-                    </td>
-                    <td>
-                        <p class="flex-block align-items-center">
-                            <img src="img/delivery/ico-new-post.ico" alt="">
-                            Нова Почта
-                        </p>
-                    </td>
-                    <td><p>Єлизаветівка, Відділення №1: пров. 1-й Калиновий, 7б</p></td>
-                    <td>
-                        <p>20400132255366</p>
-                    </td>
-                    <td>
-                        <p>
-                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
-                        </p>
-                    </td>
-
-                    <td>
-                        <p>
-                            <i class="ui icon clock outline"></i> Нова пошта очікує надходження від відправника
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            Админ
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            Розничный магазин
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
-                        </p>
-                    </td>
-                    <td>
-                        <p>
-                            <i class="ui icon globe"></i>
-                            project1515603.tilda.ws/
-                        </p>
-                    </td>
-                    <td><p>Новый</p></td>
-                    <td></td>
-                    <td><p>instagram</p></td>
-                    <td><p>lenta</p></td>
-                    <td><p>video</p></td>
-                    <td><p>insta|interes-gadget|all</p></td>
-                    <td><p>Аэромышь видео</p></td>
-                    <td><p><i class="ui icon desktop"></i> 92.63.110.179</p></td>
-                    <td><p>stagery-test.ukraine-shop.top/yulia/samsung</p></td>
-                    <td><p></p></td>
-                    <td><p></p></td>
-                    <td><p></p></td>
-                </tr>
-                <tr>
-                    <td class="status-cell">
-                        <div class="ui button tiny green status">
-                            Отправлен
-                        </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1841,11 +1747,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -1939,11 +1845,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2037,11 +1943,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2135,11 +2041,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2233,11 +2139,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2331,11 +2237,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2429,11 +2335,11 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
-                    </td>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>
@@ -2527,11 +2433,109 @@
                     <td><p></p></td>
                 </tr>
                 <tr>
-                    <td class="status-cell">
+                    <!-- <td class="status-cell">
                         <div class="ui button tiny green status">
                             Отправлен
                         </div>
+                    </td> -->
+                    <td><p>262474</p></td>
+                    <td class="order-id"><p>15592194228</p></td>
+                    <td><p>Админ</p></td>
+                    <td>
+                        <p class="flex-block align-items-center">
+                            <img src="img/UA.ico" alt=""> Украина
+                        </p>
                     </td>
+                    <td><p><i class="ui icon phone"></i> 35287523875</p></td>
+                    <td><p><i class="ui icon info"></i> test</p></td>
+                    <td class="order-sum"><p>500.00</p></td>
+                    <td class="order-products">
+                        <p>
+                            <span class="products-counter ui">2</span>
+                            мышь (1шт. x 10.00 = 10.00)~
+                        </p>
+                        <div class="ui popup">
+                            <ul>
+                                <li>мышь (1шт. x 10.00 = 10.00)~</li>
+                                <li>блендер (1шт. x 10.00 = 10.00)~</li>
+                            </ul>
+                        </div>
+
+
+                    </td>
+                    <td>
+                        <p class="flex-block align-items-center">
+                            <img src="img/money.ico" alt="">
+                            Оплачено
+                        </p>
+
+                    </td>
+                    <td>
+                        <p class="flex-block align-items-center">
+                            <img src="img/delivery/ico-new-post.ico" alt="">
+                            Нова Почта
+                        </p>
+                    </td>
+                    <td><p>Єлизаветівка, Відділення №1: пров. 1-й Калиновий, 7б</p></td>
+                    <td>
+                        <p>20400132255366</p>
+                    </td>
+                    <td>
+                        <p>
+                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
+                        </p>
+                    </td>
+
+                    <td>
+                        <p>
+                            <i class="ui icon clock outline"></i> Нова пошта очікує надходження від відправника
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            Админ
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            Розничный магазин
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            2019-05-08 <span style="font-size:11px; opacity: 0.7;"> &nbsp; 00:00:00</span>
+                        </p>
+                    </td>
+                    <td>
+                        <p>
+                            <i class="ui icon globe"></i>
+                            project1515603.tilda.ws/
+                        </p>
+                    </td>
+                    <td><p>Новый</p></td>
+                    <td></td>
+                    <td><p>instagram</p></td>
+                    <td><p>lenta</p></td>
+                    <td><p>video</p></td>
+                    <td><p>insta|interes-gadget|all</p></td>
+                    <td><p>Аэромышь видео</p></td>
+                    <td><p><i class="ui icon desktop"></i> 92.63.110.179</p></td>
+                    <td><p>stagery-test.ukraine-shop.top/yulia/samsung</p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                </tr>
+                <tr>
+                    <!-- <td class="status-cell">
+                        <div class="ui button tiny green status">
+                            Отправлен
+                        </div>
+                    </td> -->
                     <td><p>262474</p></td>
                     <td class="order-id"><p>15592194228</p></td>
                     <td><p>Админ</p></td>

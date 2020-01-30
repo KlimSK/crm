@@ -4,7 +4,7 @@
             <div class="navBurger"></div>
         </div>
 
-        <a href="/" class="home-link">
+        <a href="#" class="home-link" data-modal-target="modal-ttn-status">
             <img src="img/CRM-logo_small.png" alt="">
             LP-CRM
         </a>

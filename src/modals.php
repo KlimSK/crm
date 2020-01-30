@@ -1,4 +1,4 @@
-<div class="ui modal modal-about-site tiny">
+<div class="ui modal modal-about-site tiny" id="modal-about-site">
     <i class="close icon"></i>
     <h2 class="modal-title">
         Информация о программе
@@ -67,7 +67,7 @@
 
 </div>
 
-<div class="ui modal modal-tariffs tiny">
+<div class="ui modal modal-tariffs tiny" id="modal-tariffs">
     <i class="close icon"></i>
     <h2 class="modal-title">
         Тарифы
@@ -206,7 +206,7 @@
 </div>
 
 
-<div class="ui modal modal-contacts small">
+<div class="ui modal modal-contacts small" id="modal-contacts">
     <i class="close icon"></i>
     <h2 class="modal-title">
         Контакты
@@ -1236,7 +1236,7 @@
 
                     </div>
 
-                    <div class="order-setting-row">
+                    <div class="order-setting-row ">
                         <label for="">
                             Адреса або Відділення
                         </label>
@@ -1262,6 +1262,7 @@
 
                     </div>
 
+
                     <input type="hidden" name="SenderWarehouseType" id="SenderWarehouseType">
                 </div>
 
@@ -1277,7 +1278,8 @@
                         </label>
                         <div class="order-setting">
                             <div class="ui input">
-                                <input type="text" name="RecipientName" id="RecipientName" value="Луценко Олександр"
+                                <input type="text" name="RecipientName" id="RecipientName"
+                                       value="Тест Тест Тест"
                                        disabled placeholder="">
                             </div>
                         </div>
@@ -1328,12 +1330,12 @@
 
                     </div>
 
-                    <div class="order-setting-row">
+                    <div class="order-setting-row warehouse-warehouse">
                         <label for="">
                             Адреса або Відділення
                         </label>
 
-                        <div class="order-setting">
+                        <div class="order-setting ">
                             <div class="ui dropdown mini main-table-dropdown">
                                 <input type="hidden" name="RecipientAddress" id="RecipientAddress">
                                 <span class="text">- Оберiть спочатку населенний пункт отримувача -</span> <i
@@ -1352,6 +1354,35 @@
                         </div>
 
                     </div>
+
+                    <div class="order-setting-row warehouse-doors">
+                        <label for="RecipientAddressName">
+                            Адреса (вулиця)
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="RecipientAddressName" id="RecipientAddressName" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row warehouse-doors justify-center">
+                        <div class="ui mini  labeled input">
+                            <div class="ui label">
+                                Будинок
+                            </div>
+                            <input type="text" value="" name="RecipientHouse" id="RecipientHouse">
+                        </div>
+                        <div class="ui mini labeled input">
+                            <div class="ui label">
+                                Поверх
+                            </div>
+                            <input type="text" value="" name="RecipientFlat" id="RecipientFlat">
+                        </div>
+                    </div>
+
+
+
 
                     <input type="hidden" name="RecipientWarehouseType" id="RecipientWarehouseType">
                 </div>
@@ -1515,74 +1546,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="order-setting-row">
-                        <label for="">
-                            Опис відправлення
 
-                        </label>
-                        <div class="order-setting">
-                            <div class="ui dropdown mini main-table-dropdown">
-                                <?
-                                mysqli_select_db($db, 'novaposhta');
-                                $cargoDescriptionList = mysqli_query($db, 'SELECT Ref, Description FROM `cargodescriptionlist`');
-                                $cargoDescriptionList = mysqli_fetch_all($cargoDescriptionList, MYSQLI_ASSOC);
-                                ?>
-
-                                <input type="hidden" value="<?= $cargoDescriptionList[0]['Ref'] ?>"
-                                       name="CargoDescriptionList" id="CargoDescriptionList">
-                                <span class="text"><?= $cargoDescriptionList[0]['Description'] ?></span>
-                                <i class="ui icon caret down"></i>
-                                <div class="menu">
-                                    <div class="ui icon search input">
-                                        <i class="search icon"></i>
-                                        <input type="text" placeholder="Поиск...">
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="scrolling menu">
-                                        <? foreach ($cargoDescriptionList as $row) { ?>
-                                            <div class="item" data-value="<?= $row['Ref'] ?>">
-                                                <?= $row['Description'] ?>
-                                            </div>
-                                        <? } ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                 </div>
             </div>
 
             <div class="eight wide column">
                 <div class="order-setting-block">
-                    <div class="order-setting-row">
-                        <label for="">
-                            Тип доставки
-                        </label>
-                        <div class="order-setting">
-                            <div class="ui fluid selection dropdown">
-                                <?
-                                mysqli_select_db($db, 'novaposhta');
-                                $cargoTypes = mysqli_query($db, 'SELECT Ref, Description FROM `cargotypes`');
-                                $cargoTypes = mysqli_fetch_all($cargoTypes, MYSQLI_ASSOC);
-                                ?>
-                                <input type="hidden" value="<?= $cargoTypes[0]['Ref'] ?>"
-                                       name="CargoTypes" id="CargoTypes">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">
-                                    <?= $cargoTypes[0]['Description'] ?>
-                                </div>
-                                <div class="menu">
-                                    <? foreach ($cargoTypes as $row) { ?>
-                                        <div class="item" data-value="<?= $row['Ref'] ?>">
-                                            <?= $row['Description'] ?>
-                                        </div>
-                                    <? } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="order-setting-row">
                         <label for="">
                             Опис відправлення
@@ -1794,7 +1764,7 @@
                     <div class="order-setting-row">
                         <label for="ScansheetList">Реєстри</label>
                         <div class="order-setting">
-                            <div class="ui fluid dropdown mini main-table-dropdown">
+                            <div class="ui pointing bottom left dropdown mini main-table-dropdown">
                                 <input type="hidden" value="new" name="ScansheetList" id="ScansheetList">
                                 <span class="text">- Додати в новий реєстр -</span> <i
                                         class="ui icon caret down"></i>
@@ -1823,4 +1793,347 @@
         </div>
     </form>
 
+</div>
+
+
+<div class="ui modal small modal-ttn-status secondary-modal main-modal" id="modal-ttn-status" >
+    <i class="close icon"></i>
+
+    <h2 class="modal-title">
+        Создание декларации Новой Почты
+    </h2>
+</div>
+
+
+
+<div class="ui modal large modal-shop-logistic secondary-modal main-modal" id="modal-shop-logistic" >
+    <i class="close icon"></i>
+    <h2 class="modal-title">
+        Создание новой доставки Shop-Logistics
+    </h2>
+
+    <form action="" id="shop_logistics_form" class="ui form" method="POST">
+        <div class="ui grid">
+            <div class="eight wide column" style="padding: 25px">
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Отправитель</div>
+
+                    <div class="order-setting-row">
+                        <label for="ServiceTypes">
+                            Область
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="from_oblast" id="from_oblast">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите область</div>
+                                <div class="menu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="ServiceTypes">
+                            Город
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="from_city" id="from_city" value="405065">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите город</div>
+                                <div class="menu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="ServiceTypes">
+                            Оценочная стоимость
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="ocen_price" id="ocen_price" placeholder="" value="800">
+                            </div>
+                        </div>
+                    </div>
+
+                    <?/*
+                    $today = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+                    $tomorrow = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 1, date("Y")));
+                    $afterTomorrow = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 2, date("Y")));
+                    $tomorrow3 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 3, date("Y")));
+                    $tomorrow4 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 4, date("Y")));
+                    $tomorrow5 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 5, date("Y")));
+                    $tomorrow6 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 6, date("Y")));
+                    $tomorrow7 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 7, date("Y")));
+                    $tomorrow8 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 8, date("Y")));
+                    $tomorrow9 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 9, date("Y")));
+                    $tomorrow10 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 10, date("Y")));
+                    $tomorrow11 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 11, date("Y")));
+                    $tomorrow12 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 12, date("Y")));
+                    $tomorrow13 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 13, date("Y")));
+                    $tomorrow14 = date('Y-m-d', mktime(0, 0, 0, date("m"), date("d") + 14, date("Y")));
+                    */?>
+
+                    <!--<div class="order-setting-row">
+                        <label for="ServiceTypes">
+                            Дата доставки
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="delivery_date" id="delivery_date" value="<?/*= $tomorrow */?>">
+                                <i class="dropdown icon"></i>
+                                <div class="text"><?/*= $tomorrow */?></div>
+                                <div class="menu">
+                                    <div class="item active selected"
+                                         data-value="<?/*= $tomorrow */?>"><?/*= $tomorrow */?></div>
+                                    <div class="item" data-value="<?/*= $afterTomorrow */?>"><?/*= $afterTomorrow */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow3 */?>"><?/*= $tomorrow3 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow4 */?>"><?/*= $tomorrow4 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow5 */?>"><?/*= $tomorrow5 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow6 */?>"><?/*= $tomorrow6 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow7 */?>"><?/*= $tomorrow7 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow8 */?>"><?/*= $tomorrow8 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow9 */?>"><?/*= $tomorrow9 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow10 */?>"><?/*= $tomorrow10 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow11 */?>"><?/*= $tomorrow11 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow12 */?>"><?/*= $tomorrow12 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow13 */?>"><?/*= $tomorrow13 */?></div>
+                                    <div class="item" data-value="<?/*= $tomorrow14 */?>"><?/*= $tomorrow14 */?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Вес посылки
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="weight" id="weight" placeholder="" value="1">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="" class="align-self-start">
+                            Дополнительная информация
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <textarea rows="3" id="additional_info" name="additional_info"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="eight wide column" style="padding: 25px">
+                <div class="order-setting-block">
+                    <div class="ui horizontal divider">Получатель</div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Область
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="to_oblast" id="to_oblast">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите область</div>
+                                <div class="menu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Город
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="to_city" id="to_city" value="622116">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите город</div>
+                                <div class="menu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Тип доставки
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="tarifs_type" id="tarifs_type" value="1">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите тип доставки</div>
+                                <div class="menu">
+                                    <div class="item active selected" data-value="1">Курьер</div>
+                                    <div class="item" data-value="2">Самовывоз</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Адрес
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="address" id="address" placeholder="Адрес"
+                                       value="ул. Пушкина 25">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Пункт самовывоза
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui fluid search selection dropdown">
+                                <input type="hidden" name="pickup_place" id="pickup_place" value="">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Выберите пункт самовывоза</div>
+                                <div class="menu">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="">
+                            Контактное лицо
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="contact_person" id="contact_person"
+                                       placeholder="Контактое лицо"
+                                       value="Тест Тест">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Телефон
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text" name="phone" id="phone" placeholder="Телефон" value="+73529523714">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ui twelve wide column centered">
+                <div class="ui horizontal divider">Товары</div>
+                <div class="products">
+                    <div class="product">
+                        <div class="order-setting-block">
+                            <div class="ui grid">
+                                <div class="ui eight wide column">
+                                    <div class="order-setting-row">
+                                        <label for="">
+                                            Артикул
+                                        </label>
+                                        <div class="order-setting">
+                                            <div class="ui input">
+                                                <input type="text" name="articul[]" placeholder="Артикул"
+                                                       value="RTO.M431">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-setting-row">
+                                        <label for="">
+                                            Наименование товара
+                                        </label>
+                                        <div class="order-setting">
+                                            <div class="ui input">
+                                                <input type="text" name="name[]" placeholder="Наименование товара"
+                                                       value="Тестовый товар">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ui eight wide column">
+                                    <div class="order-setting-row">
+                                        <label for="">
+                                            Количество
+                                        </label>
+                                        <div class="order-setting">
+                                            <div class="ui input">
+                                                <input type="text" name="quantity[]" placeholder="Количество" value="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="order-setting-row">
+                                        <label for="">
+                                            Цена единицы товара
+                                        </label>
+                                        <div class="order-setting">
+                                            <div class="ui input">
+                                                <input type="text" name="item_price[]" placeholder="Цена единицы товара"
+                                                       value="485">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <a href="" id="add_new_product" style="text-decoration: dashed; margin-top: 15px; text-align: center; display: block;">
+                    <i class="icon plus circle"></i>
+                    Добавить товар
+                </a>
+
+                <div class="order-setting-row mt-1">
+                    <p class="shop-logistic-info">
+                        Дата доставки: <span id="deliveryDate">-</span>
+
+                        <input type="hidden" id="delivery_date" name="delivery_date">
+                    </p>
+
+                    <p class="shop-logistic-info">
+                        Сумма доставки: <span id="deliveryCost">-</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-foot" style="margin-top: 45px;">
+            <div class="modal-save">
+                <button type="submit" class="ui labeled icon small yellow button">
+                    <i class="file alternate icon"></i>
+                    Подтвердить
+                </button>
+            </div>
+        </div>
+    </form>
 </div>

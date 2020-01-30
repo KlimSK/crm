@@ -8,10 +8,6 @@ $db = "novaposhta";
 
 $errors_list = $_POST['np_errors'];
 
-
-//$errors_list = array( 0 =>"20000100005");
-//$errors_list = json_encode($errors_list);
-
 $errors_list = json_decode($errors_list);
 
 

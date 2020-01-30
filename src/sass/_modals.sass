@@ -1,7 +1,7 @@
 .modal
   padding: 20px
   border-radius: 5px
-  top: 0
+  top: 15px
   .modal-title
     font-size: 20px
     color: $main-color
@@ -265,7 +265,7 @@
           max-width: 40%
           margin-right: auto
           margin-left: 4%
-    .order-setting-row.flex-block.justify-space-around
+    .order-setting-row.flex-block
       margin: 10px 0
       .labeled
         width: auto
@@ -341,7 +341,7 @@
   justify-content: center
 
 
-.modal-create-ttn
+.modal-create-ttn, .modal-ttn-status
   .modal-title, .ui.horizontal.divider
     color: rgb(219, 81, 77)
     &:before, &:after
@@ -361,3 +361,27 @@
   .ui.horizontal.divider .checkbox
     input:checked~label:before
       background-color: rgb(219, 81, 77) !important
+
+#novaposhta
+  margin-bottom: 0
+
+  .warehouse-doors
+    display: none
+    .labeled.input
+      margin: 0 10px
+      justify-content: center
+      input
+        max-width: 45px
+
+#modal-shop-logistic
+
+  .shop-logistic-info
+    font-weight: 600
+    color: rgba(0, 0, 0, 0.55)
+    span
+      color: #fbbd08
+      font-size: 1.1rem
+
+  .ui.horizontal.divider .checkbox
+    input:checked~label:before
+      background-color: #fbbd08  !important

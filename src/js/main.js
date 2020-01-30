@@ -9,6 +9,7 @@ $(document).ready(function () {
     tableDefinitions();
     orderModalSendCalendar($('#order-modal-send'));
     orderModalSendCalendar($('#notification-date'));
+    modalDefinitions();
 });
 
 
@@ -110,21 +111,27 @@ function headerDefinitions() {
         on: 'click'
     });
 
-    $('.modal-about-site.modal')
+
+
+    $('.ui.dropdown').each(function () {
+        $(this).dropdown({
+            fullTextSearch: true,
+        });
+    });
+}
+
+function modalDefinitions() {
+    /*$('.modal-about-site.modal')
         .modal('attach events', '#about-site', 'show');
 
     $('.modal-tariffs.modal')
         .modal('attach events', '#all-tariffs', 'show');
 
     $('.modal-contacts.modal')
-        .modal('attach events', '#header-contacts', 'show');
+        .modal('attach events', '#header-contacts', 'show');*/
 
-
-
-    $('.ui.dropdown').each(function () {
-        $(this).dropdown({
-            fullTextSearch: true
-        });
+    $('[data-modal-target]').click(function () {
+        $('#' + $(this).attr('data-modal-target')).modal('show');
     });
 }
 
@@ -138,9 +145,6 @@ function tableDefinitions() {
             position: 'bottom center'
         });
     });
-
-
-
 
 
     initSemanticCalendar($('#send-from'), $('#send-to'));
@@ -182,7 +186,7 @@ function orderModal() {
             .modal('show');
     });
 
-
+    closeModalByDimmer(secondaryModal);
 }
 
 //Модальное окно товара
@@ -201,8 +205,11 @@ function closeModalByDimmer(modal) {
     $(document).mouseup(function (e) {
         var container = modal;
 
+        var alert = $('.ui-alert-content');
+
         // if the target of the click isn't the container nor a descendant of the container
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if (!container.is(e.target) && container.has(e.target).length === 0
+            && !alert.is(e.target) && alert.has(e.target).length === 0) {
             modal.modal('hide');
         }
     });
@@ -407,24 +414,36 @@ function mainMenuHeight() {
 }
 
 
-function alertMessage(type, head, text, time, icon) {
+function alertMessage(type, head, text, time) {
     var bgColor = '#55a9ee';
-    if (type == "danger")
+    var alertIcon = 'info circle';
+    if (type == "danger") {
         bgColor = "#DB2828";
-    else if(type == "warning")
+        alertIcon = 'times box';
+    }
+    else if (type == "warning") {
         bgColor = "#F2711C";
-    else if (type == "success")
-        bgColor = "#19c3aa";
+        alertIcon = 'warning sign icon';
+    }
+
+    else if (type == "success") {
+        bgColor = "#21ba45";
+        alertIcon = 'checkmark box';
+    }
+    else if(type == "info"){
+        bgColor = "#55a9ee";
+        alertIcon = 'info circle';
+    }
 
 
-    if(type && head && text) {
+    if (type && head && text) {
         $.uiAlert({
             textHead: head, // header
             text: text, // Text
             bgcolor: bgColor, // background-color
             textcolor: '#fff', // color
             position: 'top-right',// position . top And bottom ||  left / center / right
-            icon: icon ? icon : 'checkmark box', // icon in semantic-UI
+            icon: alertIcon, // icon in semantic-UI
             time: time ? time : 5 // time
         });
     }

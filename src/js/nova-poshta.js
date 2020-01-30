@@ -8,6 +8,10 @@ var apiKey = 'c802cd9bcb599879d65035f6ccd34142';
 
 $(function () {
 
+    var number = '20400149113895';
+    datePayedKeeping(number);
+
+
     if ($('#counterparty_sender').val()) loadWarehouses('Sender');
     loadWarehouses('Recipient');
 
@@ -348,7 +352,7 @@ function setNovaPoshtaParameters() {
         recipientHouse: $('#RecipientHouse').val(),
         recipientFlat: $('#RecipientFlat').val(),
         recipientAddressName: $('#RecipientAddressName').val(),
-        recipientCityName: $('#CityRecipient option:selected').text(),
+        recipientCityName: $('#CityRecipient').siblings('span.text').text(),
         recipient: '',
         dateTime: $("#DateDeliverySend").val(),
         redbox: '',
@@ -398,7 +402,6 @@ function setNovaPoshtaParameters() {
 
 
     $.ajax(settings).done(function (response) {
-        console.log(response);
         if (response['success']) {
             parameters['recipient'] = response['data'][0]['Ref'].toString();
             parameters['contactRecipient'] = response['data'][0]['ContactPerson']['data'][0]['Ref'];
@@ -419,6 +422,8 @@ function createTTN(parameters) {
 
 
     var backward = '';
+
+    console.log(parameters);
 
     if (parameters['backward']) {
         backward = ', "BackwardDeliveryData": [' +
@@ -586,14 +591,19 @@ function createTTN(parameters) {
         };
     }
 
-    console.log(settings);
-    console.log('test0');
 
     $.ajax(settings).done(function (response) {
-            console.log('test');
             console.log(response);
             if (parameters['scansheet'] && response['success']) {
                 addToRegister(parameters, response['data'][0]['Ref']);
+                alertMessage('success', 'Успіх!', 'ТТН успішно створена.');
+            }
+            else if(response['success']){
+                alertMessage('success', 'Успіх!', 'ТТН успішно створена.');
+            }
+            else if (!response['success']){
+                console.log(response['errorCodes']);
+                npErrors(response['errorCodes']);
             }
         }
     );
@@ -784,23 +794,65 @@ function getCounteragents() {
 
 
 function npErrors(errors) {
-    var errors2 = ["20000100005", "20000100013"];
-
     $.ajax({
         type: 'POST',
         url: 'novaposhta_errors.php',
-        data: { np_errors: JSON.stringify(errors2) },
+        data: { np_errors: JSON.stringify(errors) },
         success: function(response){
-            var errors_list = '';
+            var errors_list = '<ul style="padding-left: 15px">';
+
 
             JSON.parse(response).forEach(function (el) {
-                errors_list+= "\xa0 - " + el['MessageDescriptionUA'] + "<br>";
+                errors_list+= "<li>" + el['MessageDescriptionUA'] + "</li>";
             });
 
-            alertMessage('danger', 'Помилка Нової Пошти', errors_list, 10, 'times box');
+
+            errors_list += "</ul>";
+
+            alertMessage('danger', 'Помилка Нової Пошти', errors_list, 10);
         },
         error: function(msg){
             alert("Error: "+msg);
+        }
+    });
+}
+
+
+//Дата начала платного хранения
+function datePayedKeeping(number) {
+
+
+    var settings = {
+        "async": false,
+        "crossDomain": true,
+        "url": "https://api.novaposhta.ua/v2.0/json/",
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "processData": false,
+        "data": '{ ' +
+            '"apiKey": "' + apiKey + '",' +
+            '"modelName": "TrackingDocument", ' +
+            '"calledMethod": "getStatusDocuments", ' +
+            '"methodProperties": {' +
+                '"Documents": [' +
+                    '{' +
+                        '"DocumentNumber": "' + number + '"' +
+                    '}' +
+                ']'  +
+            '} ' +
+        '}'
+
+    };
+
+
+    $.ajax(settings).done(function (response) {
+        if (response['success']) {
+           console.log(response['data'][0]['DatePayedKeeping']);
+        }
+        else{
+            npErrors(response['errorCodes']);
         }
     });
 }
