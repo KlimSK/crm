@@ -1,14 +1,12 @@
+.sub-id-list
+  li
+    padding-top: 5px
+    &:last-child:before
+      display: none
 .list-item
   display: flex
-  .left-item,
-  .right-item
-    width: 48%
-  .left-item
-    text-align: left
-  .right-item
-    text-align: right
+  justify-content: space-between
 
 .list li:last-child
   .right-item
-    padding-bottom: 4px
-    border-bottom: 1px solid #dddede
+    border-top: 1px solid #dddede
