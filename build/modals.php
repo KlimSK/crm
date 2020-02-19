@@ -2906,3 +2906,64 @@
 
 
 </div>
+
+<div class="ui modal tiny modal-wrap modal-currency">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="modal-currency__name">Название</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text"
+                                   placeholder=""
+                                   value="Россия"
+                                   name="name"
+                                   id="modal-currency__name">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="modal-currency__symbol">Символ</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text"
+                                   placeholder=""
+                                   value="Россия"
+                                   name="symbol"
+                                   id="modal-currency__symbol">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="modal-currency__order-sort">Порядок сортировки</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text"
+                                   name="orderSort"
+                                   value="3"
+                                   id="modal-currency__order-sort"
+                                   disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button modal-manufacturers__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

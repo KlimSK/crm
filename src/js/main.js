@@ -157,6 +157,7 @@ function tableDefinitions() {
     productModal();
     categoryModal();
     manufacturersModal();
+
 }
 
 //Модальное окно заказа
@@ -217,6 +218,14 @@ function manufacturersModal() {
             .modal('show');
     });
 }
+
+//Вызов модального окна
+$('.main-table tbody tr').dblclick(function () {
+    var dataAttrForCallModal = $(this).closest('.main-table').attr('data-modal');
+    $('.modal-'+dataAttrForCallModal+'.modal')
+        .modal({})
+        .modal('show');
+});
 
 //Закрыть модальное окно
 function closeModalByDimmer(modal) {
@@ -467,3 +476,27 @@ function alertMessage(type, head, text, time) {
         });
     }
 }
+
+
+// стрелки сортировки
+
+$(".table_sort_js").click(function () {
+
+    var up   = $(".sort_up");
+    var down = $(".sort_down");
+    var active;
+
+    if(up.hasClass('d-none')){
+        up.removeClass('d-none');
+        down.addClass("d-none");
+        active = 'ASC';
+    }else{
+        down.removeClass('d-none');
+        up.addClass('d-none');
+        active = 'DESC';
+    }
+
+    // do something
+    // with var active
+});
+
