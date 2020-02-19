@@ -2967,3 +2967,90 @@
 
 
 </div>
+
+<div class="ui modal tiny modal-wrap modal-landings">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="modal-landings__url">URL ( домен )</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <div class="ui label">
+                                http://
+                            </div>
+                            <input type="text"
+                                   value="fishka1.com"
+                                   id="modal-landings__url"
+                                   name="url">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order-setting-row">
+                    <label for="modal-landings__name">Название</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text"
+                                   placeholder=""
+                                   value="Россия"
+                                   name="symbol"
+                                   id="modal-landings__name">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <div class="column"></div>
+                    <div class="order-setting">
+                        <div class="alert-block">
+                            <div class="red-alert">
+                                <div class="column">
+                                    <i class="exclamation triangle icon alert__icon"></i>
+                                </div>
+                                <div class="column">
+                                    <div class="alert__title">
+                                        Внимание !
+                                    </div>
+                                    <div class="alert__content">
+                                        Сайт можно только добавлять. <br>
+                                        После добавления его не возможно удалить.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order-setting-row">
+                    <label for="modal-landings__description">Описание</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <textarea type="text"
+                                      rows="3"
+                                      name="description"
+                                      id="modal-landings__description"
+                                      placeholder=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button modal-manufacturers__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

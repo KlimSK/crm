@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="fonts/yandex/stylesheet.css">
     <link rel="stylesheet" href="fonts/lato/lato.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Производители</title>
+    <title>Сайты (Лендинги)</title>
 
 </head>
 <body>
@@ -77,15 +77,14 @@
 
         </div>
 
-        <div class="main-table manufacturers-table">
+        <div class="main-table landings-table" data-modal="landings">
             <table class=" ui table blue celled">
                 <thead>
                 <tr>
                     <th width="10">id</th>
-                    <th width="90">Название</th>
-                    <th width="40">Тип</th>
-                    <th width="30">Описание</th>
-                    <th width="10">Sort</th>
+                    <th width="30">Сайт</th>
+                    <th width="50">Название</th>
+                    <th width="70">Описание</th>
                 </tr>
 
                 <tr>
@@ -100,15 +99,8 @@
                         </div>
                     </td>
                     <td>
-                        <div class="ui dropdown mini main-table-dropdown">
-                            <input type="hidden" name="filters">
-                            <span class="text">Все</span> <i class="ui icon caret down"></i>
-                            <div class="menu">
-                                <div class="scrolling menu">
-                                    <div class="item" data-value="important">Страна производитель</div>
-                                    <div class="item" data-value="announcement">Бренд</div>
-                                </div>
-                            </div>
+                        <div class="ui input">
+                            <input type="text">
                         </div>
                     </td>
                     <td>
@@ -116,7 +108,6 @@
                             <input type="text">
                         </div>
                     </td>
-                    <td></td>
                 </tr>
                 </thead>
 
@@ -126,42 +117,20 @@
                         <p>1</p>
                     </td>
                     <td>
-                        <img src="/img/flags/CN.ico" class="table-icon">
-                        <span class="item">Китай</span>
+                        <img src="https://www.google.com/s2/favicons?domain=fishka1.com"
+                             alt="tabs-icon">
+                        <span class="item">fishka1.com</span>
                     </td>
                     <td>
-                        <p>Бренд</p>
-                    </td>
-                    <td>
-                        <div class="grey-style">
-                            <p>бывшая фирма Goldstar</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="item">1</span>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <p>2</p>
-                    </td>
-                    <td>
-                        <span class="item no-icon-margin">LG</span>
-                    </td>
-                    <td>
-                        <p>Бренд</p>
+                        <p>Интернет магазин Фишка</p>
                     </td>
                     <td>
                         <div class="grey-style">
-                            <p>КНР</p>
+                            <p>Интернет магазин хитовых товаров Фишка</p>
                         </div>
                     </td>
-                    <td>
-                        <span class="item">2</span>
-                    </td>
-                </tr>
 
+                </tr>
 
                 </tbody>
             </table>
