@@ -62,7 +62,7 @@
                     <li title="Производители"><a href="manufacturers.php">Производители </a></li>
                     <li title="Валюта"><a href="currency.php">Валюта </a></li>
                     <li title="Сайты (лендинги)"><a href="landings.php">Сайты (лендинги) </a></li>
-                    <li title="Категории атрибутов"><a href="#">Категории атрибутов </a></li>
+                    <li title="Категории атрибутов"><a href="attributes_categories.php">Категории атрибутов </a></li>
                     <li title="Атрибуты (Sub-ID)"><a href="#">Атрибуты (Sub-ID) </a></li>
                     <li title="Цвета товаров"><a href="#">Цвета товаров </a></li>
                     <li title="Страны"><a href="#">Страны </a></li>

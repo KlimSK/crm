@@ -2466,7 +2466,10 @@
                     <div class="chose-photo">
 
                         <label for="chose-photo__input" class="chose-photo__label"></label>
-                        <input type="file" id="chose-photo__input">
+                        <input type="file"
+                               id="chose-photo__input"
+                               data-class="chose-photo"
+                               class="photo-input_js">
 
                     </div>
 

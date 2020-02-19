@@ -479,7 +479,6 @@ function alertMessage(type, head, text, time) {
 
 
 // стрелки сортировки
-
 $(".table_sort_js").click(function () {
 
     var up   = $(".sort_up");
@@ -500,3 +499,25 @@ $(".table_sort_js").click(function () {
     // with var active
 });
 
+// Загрузка картинки
+
+$(".photo-input_js").change(function () {
+
+    var $i        = $( this ), // Файл инпута
+        className = $i.attr("data-class"), // атрибут инпута
+        parent    = $i.parent(), // получаем родителя
+        input     = $i[0]; // Получаем елемент
+    if ( input.files && input.files[0] ) {
+        file = input.files[0]; // Файл
+        fr = new FileReader(); // Читаем файл
+        fr.onload = function () {
+            // додавляем в бекграунд
+            parent.find("."+className+"__label").css({"background-image":"url('"+fr.result+"')"})
+        };
+        fr.readAsDataURL( file );
+    } else {
+        // тут понятно
+        console.log( "File not selected or browser incompatible." );
+    }
+
+});
