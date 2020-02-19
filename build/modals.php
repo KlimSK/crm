@@ -3058,7 +3058,7 @@
 
 </div>
 
-<div class="ui modal tiny modal-wrap modal-attrubutes_categories">
+<div class="ui modal tiny modal-wrap modal-attributes_categories">
     <i class="close icon"></i>
 
     <div class="modal-head">
@@ -3071,19 +3071,81 @@
         <div class="ui one column stackable grid container">
             <div class="column">
                 <div class="order-setting-row">
-                    <label for="attrubutes_categories__name">Название</label>
+                    <label for="attributes_categories__name">Название</label>
                     <div class="order-setting">
                         <div class="ui labeled input mini">
                             <input type="text"
                                    value="Размер обуви"
-                                   id="attrubutes_categories__name"
+                                   id="attributes_categories__name"
                                    name="url">
                         </div>
                     </div>
 
                 </div>
                 <div class="column pt-3 text-align-center">
-                    <button class="ui primary button modal-attrubutes_categories__button">
+                    <button class="ui primary button modal-attributes_categories__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="ui modal tiny modal-wrap modal-attributes">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="attributes__name">
+                        Название <i class="ui icon tag"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <input type="text"
+                                   value="47 размер обуви"
+                                   id="attributes__name"
+                                   name="name">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order-setting-row">
+                    <label for="attributes__category">
+                        Категория <i class="ui icon sitemap"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden"
+                                   id="attributes__category"
+                                   name="category">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Категории</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">
+                                    Категория 1
+                                </div>
+                                <div class="item" data-value="2">
+                                    Категория 2
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button modal-attributes_categories__button">
                         Сохранить
                     </button>
                 </div>
