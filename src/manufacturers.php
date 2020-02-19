@@ -5,6 +5,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="stylesheet" href="fonts/yandex/stylesheet.css">
     <link rel="stylesheet" href="fonts/lato/lato.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Производители</title>
@@ -99,7 +100,6 @@
                         </div>
                     </td>
                     <td>
-
                         <div class="ui dropdown mini main-table-dropdown">
                             <input type="hidden" name="filters">
                             <span class="text">Все</span> <i class="ui icon caret down"></i>

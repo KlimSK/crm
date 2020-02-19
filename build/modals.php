@@ -2811,7 +2811,7 @@
 
 </div>
 
-<div class="ui modal tiny modal-manufacturers">
+<div class="ui modal tiny modal-wrap modal-manufacturers">
     <i class="close icon"></i>
 
     <div class="modal-head">
@@ -2824,94 +2824,78 @@
         <div class="ui one column stackable grid container">
             <div class="column">
                 <div class="order-setting-row">
-                    <label for="name">
-                        Название <i class="ui icon tag"></i>
-                    </label>
+                    <label for="modal-manufacturers__name">Название</label>
                     <div class="order-setting">
                         <div class="ui input">
-                            <input type="text" placeholder="" name="name" id="name">
+                            <input type="text"
+                                   placeholder=""
+                                   value="Россия"
+                                   name="name"
+                                   id="modal-manufacturers__name">
                         </div>
                     </div>
                 </div>
                 <div class="order-setting-row">
-                    <label for="belongTo">
-                        Подчиняется <i class="ui icon sitemap"></i>
-                    </label>
+                    <label for="modal-manufacturers__country">Страна</label>
                     <div class="order-setting">
-                        <div class="ui selection disabled dropdown">
-                            <input type="hidden" name="belong" id="belongTo">
+                        <div class="ui fluid search selection dropdown">
+                            <input type="hidden"
+                                   id="modal-manufacturers__country"
+                                   name="country">
                             <i class="dropdown icon"></i>
-                            <div class="default text">Не указано</div>
+                            <div class="default text">Выбрать страну</div>
                             <div class="menu">
-                                <div class="item" data-value="1">Male</div>
-                                <div class="item" data-value="0">Female</div>
+                                <div class="item" data-value="UA">
+                                    <i class="ua flag"></i>
+                                    Украина
+                                </div>
+                                <div class="item" data-value="ax">
+                                    <i class="ru flag"></i>
+                                    Россия
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="order-setting-row">
-                    <label for="type">
-                        Тип <i class="code branch icon"></i>
-                    </label>
+                    <label for="modal-manufacturers__type">Тип</label>
                     <div class="order-setting">
                         <div class="ui selection dropdown">
-                            <input type="hidden" name="belong" id="type">
+                            <input type="hidden" name="type" id="modal-manufacturers__type">
                             <i class="dropdown icon"></i>
-                            <div class="default text">Не указано</div>
+                            <div class="default text">Страна производитель</div>
                             <div class="menu">
-                                <div class="item" data-value="1">Male</div>
-                                <div class="item" data-value="0">Female</div>
+                                <div class="item" data-value="country_produce">Страна производитель</div>
+                                <div class="item" data-value="brand">Бренд</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="ui horizontal divider pt-4">Дополнительно</div>
-                    <div class="order-setting-row">
-                        <label for="status">
-                            Статус <i class="ui icon fa-eye-slash"></i>
-                        </label>
-                        <div class="order-setting">
-                            <div class="ui input">
-                                <input type="text"
-                                       name="status"
-                                       id="status"
-                                       value="Используется"
-                                       disabled>
-                            </div>
+                <div class="order-setting-row">
+                    <label for="modal-manufacturers__description">Описание</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <textarea type="text"
+                                      rows="3"
+                                      id="modal-manufacturers__description"
+                                      placeholder=""></textarea>
                         </div>
                     </div>
-                    <div class="order-setting-row">
-                        <label for="name">
-                            Порядок сортировки <i class="ui icon server"></i>
-                        </label>
-                        <div class="order-setting">
-                            <div class="ui input">
-                                <input type="text"
-                                       name="orderSort"
-                                       value="4"
-                                       id="orderSort"
-                                       disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-setting-row">
-                        <label for="date">
-                            Добавлено <i class="ui icon calendar"></i>
-                        </label>
-                        <div class="order-setting">
-                            <div class="ui input">
-                                <input type="text"
-                                       name="date"
-                                       value="2018-10-04"
-                                       id="date"
-                                       disabled>
-                            </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="modal-manufacturers__order-sort">Порядок сортировки</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text"
+                                   name="orderSort"
+                                   value="7"
+                                   id="modal-manufacturers__order-sort"
+                                   disabled>
                         </div>
                     </div>
                 </div>
                 <div class="column pt-3 text-align-center">
-                    <button class="ui primary button">
+                    <button class="ui primary button modal-manufacturers__button">
                         Сохранить
                     </button>
                 </div>
