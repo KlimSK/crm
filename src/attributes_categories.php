@@ -77,7 +77,7 @@
 
         </div>
 
-        <div class="main-table manufacturers-table">
+        <div class="main-table attrubutes_categories-table" data-modal="attrubutes_categories">
             <table class=" ui table blue celled">
                 <thead>
                     <tr>
@@ -90,45 +90,46 @@
 
                 <tbody>
                     <tr>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td>
-                        <i class="fa fa-building"></i>
-                        <span class="item">Китай</span>
-                    </td>
-                    <td>
-                        <p>Бренд</p>
-                    </td>
-                    <td>
-                        <div class="grey-style">
-                            <p>бывшая фирма Goldstar</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="item">1</span>
-                    </td>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-building"></i>
+                            <span class="item">Размер флешки</span>
+                        </td>
+                        <td>
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox"
+                                       data-id="1"
+                                       name="order-passed">
+                                <label for="order-passed"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="item">1</span>
+                        </td>
 
-                </tr>
+                    </tr>
                     <tr>
-                    <td>
-                        <p>2</p>
-                    </td>
-                    <td>
-                        <span class="item no-icon-margin">LG</span>
-                    </td>
-                    <td>
-                        <p>Бренд</p>
-                    </td>
-                    <td>
-                        <div class="grey-style">
-                            <p>КНР</p>
-                        </div>
-                    </td>
-                    <td>
-                        <span class="item">2</span>
-                    </td>
-                </tr>
+                        <td>
+                            <p>2</p>
+                        </td>
+                        <td>
+                            <i class="fa fa-building"></i>
+                            <span class="item">Размер обуви</span>
+                        </td>
+                        <td>
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox"
+                                       data-id="2"
+                                       name="order-passed">
+                                <label for="order-passed"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="item">2</span>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -57,7 +57,7 @@
                 <ul>
                     <li class="min-menu-title no-hover">Каталог</li>
 
-                    <li title="Категории товаров"><a href="manufacturers.php">Категории товаров </a></li>
+                    <li title="Категории товаров"><a href="categories.php">Категории товаров </a></li>
                     <li title="Товары"><a href="products.php">Товары </a></li>
                     <li title="Производители"><a href="manufacturers.php">Производители </a></li>
                     <li title="Валюта"><a href="currency.php">Валюта </a></li>

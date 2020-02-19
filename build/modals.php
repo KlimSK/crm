@@ -3057,3 +3057,40 @@
 
 
 </div>
+
+<div class="ui modal tiny modal-wrap modal-attrubutes_categories">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="attrubutes_categories__name">Название</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <input type="text"
+                                   value="Размер обуви"
+                                   id="attrubutes_categories__name"
+                                   name="url">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button modal-attrubutes_categories__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
