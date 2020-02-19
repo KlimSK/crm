@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="fonts/lato/lato.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Категории</title>
+    <title>Производители</title>
 
 </head>
 <body>
@@ -76,17 +76,48 @@
 
         </div>
 
-        <div class="main-table category-table">
+        <div class="main-table manufacturers-table">
             <table class=" ui table blue celled">
                 <thead>
                 <tr>
-                    <th width="65">id</th>
+                    <th width="10">id</th>
                     <th width="90">Название</th>
-                    <th width="40">Статус</th>
-                    <th width="30">Добавлено</th>
-                    <th width="90">Sort</th>
+                    <th width="40">Тип</th>
+                    <th width="30">Описание</th>
+                    <th width="10">Sort</th>
                 </tr>
 
+                <tr>
+                    <td>
+                        <div class="ui input">
+                            <input type="text">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui input">
+                            <input type="text">
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="ui dropdown mini main-table-dropdown">
+                            <input type="hidden" name="filters">
+                            <span class="text">Все</span> <i class="ui icon caret down"></i>
+                            <div class="menu">
+                                <div class="scrolling menu">
+                                    <div class="item" data-value="important">Страна производитель</div>
+                                    <div class="item" data-value="announcement">Бренд</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ui input">
+                            <input type="text">
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
                 </thead>
 
                 <tbody>
@@ -95,17 +126,16 @@
                         <p>1</p>
                     </td>
                     <td>
-                        <i class="folder outline icon"></i>
-                        <span class="item">Автотовары</span>
+                        <img src="/img/flags/CN.ico" class="manufacturers-icon">
+                        <span class="item">Китай</span>
                     </td>
                     <td>
-                        <div class="ui toggle checkbox">
-                            <input type="checkbox" name="order-passed">
-                            <label for="order-passed"></label>
+                        <p>Бренд</p>
+                    </td>
+                    <td>
+                        <div class="grey-style">
+                            <p>бывшая фирма Goldstar</p>
                         </div>
-                    </td>
-                    <td>
-                        <div class="item">2018-04-10</div>
                     </td>
                     <td>
                         <span class="item">1</span>
@@ -117,17 +147,15 @@
                         <p>2</p>
                     </td>
                     <td>
-                        <i class="folder open outline icon"></i>
-                        <span class="item">Электроника</span>
+                        <span class="item no-icon-margin">LG</span>
                     </td>
                     <td>
-                        <div class="ui toggle checkbox">
-                            <input type="checkbox" name="order-passed">
-                            <label for="order-passed"></label>
+                        <p>Бренд</p>
+                    </td>
+                    <td>
+                        <div class="grey-style">
+                            <p>КНР</p>
                         </div>
-                    </td>
-                    <td>
-                        <div class="item">2018-04-10</div>
                     </td>
                     <td>
                         <span class="item">2</span>
@@ -447,13 +475,13 @@
             <td>Telegram (канал)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
+                        href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
         </tr>
         <tr>
             <td>Telegram (техподдержка)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
+                        href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
         </tr>
         <tr>
             <td>Блог CRM</td>
@@ -464,8 +492,8 @@
         <tr>
             <td>YouTube</td>
             <td><i class="fab fa-youtube-square" style="color:#DC212F;"></i><a
-                    href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
-                    target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
+                        href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
+                        target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
         </tr>
         <tr>
             <td>Киевстар</td>

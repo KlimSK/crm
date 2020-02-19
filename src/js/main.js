@@ -27,7 +27,7 @@ function sidebarMenuControls() {
             elem.addClass('active');
             elem.find('>ul').css('height', 'auto');
 
-            console.log(elem.position().top);
+            // console.log(elem.position().top);
             elem.find('>ul').css('top', elem.position().top);
             var autoHeight = elem.find('>ul').css('height');
             elem.find('>ul').css('height', '0').animate({height: autoHeight}, 400);
@@ -155,6 +155,8 @@ function tableDefinitions() {
     tableRowClick();
     orderModal();
     productModal();
+    categoryModal();
+    manufacturersModal();
 }
 
 //Модальное окно заказа
@@ -198,6 +200,23 @@ function productModal() {
     });
 }
 
+//Модальное окно категории
+function categoryModal() {
+    $('.main-table.category-table tbody tr').dblclick(function () {
+        $('.modal-category.modal')
+            .modal({})
+            .modal('show');
+    });
+}
+
+//Модальное окно производителей
+function manufacturersModal() {
+    $('.main-table.manufacturers-table tbody tr').dblclick(function () {
+        $('.modal-manufacturers.modal')
+            .modal({})
+            .modal('show');
+    });
+}
 
 //Закрыть модальное окно
 function closeModalByDimmer(modal) {
@@ -231,8 +250,8 @@ function tableRowClick() {
 
             var direction = end.index() > start.index() ? 'forward' : 'back';
 
-            console.log(start.index());
-            console.log(end.index());
+            // console.log(start.index());
+            // console.log(end.index());
 
             if (direction === 'forward') {
                 start.nextUntil(end).addClass('active-row');

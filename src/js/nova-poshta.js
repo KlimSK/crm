@@ -423,7 +423,7 @@ function createTTN(parameters) {
 
     var backward = '';
 
-    console.log(parameters);
+    // console.log(parameters);
 
     if (parameters['backward']) {
         backward = ', "BackwardDeliveryData": [' +
@@ -492,7 +492,7 @@ function createTTN(parameters) {
                 };
             }
             else {
-                console.log(validationPoshtomat(parameters));
+                // console.log(validationPoshtomat(parameters));
             }
 
         }
@@ -593,7 +593,7 @@ function createTTN(parameters) {
 
 
     $.ajax(settings).done(function (response) {
-            console.log(response);
+            // console.log(response);
             if (parameters['scansheet'] && response['success']) {
                 addToRegister(parameters, response['data'][0]['Ref']);
                 alertMessage('success', 'Успіх!', 'ТТН успішно створена.');
@@ -602,7 +602,7 @@ function createTTN(parameters) {
                 alertMessage('success', 'Успіх!', 'ТТН успішно створена.');
             }
             else if (!response['success']){
-                console.log(response['errorCodes']);
+                // console.log(response['errorCodes']);
                 npErrors(response['errorCodes']);
             }
         }
@@ -712,7 +712,7 @@ function addToRegister(parameters, declarationRef) {
     };
 
 
-    console.log(settings);
+    // console.log(settings);
     $.ajax(settings).done(function (response) {
         console.log(response);
     });
@@ -849,7 +849,7 @@ function datePayedKeeping(number) {
 
     $.ajax(settings).done(function (response) {
         if (response['success']) {
-           console.log(response['data'][0]['DatePayedKeeping']);
+           // console.log(response['data'][0]['DatePayedKeeping']);
         }
         else{
             npErrors(response['errorCodes']);

@@ -205,7 +205,6 @@
     </p>
 </div>
 
-
 <div class="ui modal modal-contacts small" id="modal-contacts">
     <i class="close icon"></i>
     <h2 class="modal-title">
@@ -975,7 +974,6 @@
 
 </div>
 
-
 <div class="ui modal tiny modal-order-notification secondary-modal" id="modal-order-notification">
     <i class="close icon"></i>
 
@@ -1052,7 +1050,6 @@
     </form>
 
 </div>
-
 
 <div class="ui modal large modal-create-ttn secondary-modal main-modal" id="modal-create-ttn">
 
@@ -1623,8 +1620,8 @@
 
                     <div class="order-setting-row flex-block justify-space-around">
                         <div class="ui mini right labeled input">
-                            <label for="amount" class="ui label">Загальна вага</label>
-                            <input type="text" value="1" name="weight" id="weight">
+                            <label for="totalWeight" class="ui label">Загальна вага</label>
+                            <input type="text" value="1" name="weight" id="totalWeight">
                             <div class="ui basic label">кг</div>
                         </div>
                         <div class="ui mini right labeled input">
@@ -1795,7 +1792,6 @@
 
 </div>
 
-
 <div class="ui modal small modal-ttn-status secondary-modal main-modal" id="modal-ttn-status" >
     <i class="close icon"></i>
 
@@ -1803,8 +1799,6 @@
         Создание декларации Новой Почты
     </h2>
 </div>
-
-
 
 <div class="ui modal large modal-shop-logistic secondary-modal main-modal" id="modal-shop-logistic" >
     <i class="close icon"></i>
@@ -2136,4 +2130,795 @@
             </div>
         </div>
     </form>
+</div>
+
+<div class="ui modal large modal-product">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение товара [2403] : (RU) Косметический набор Lamiton *5073*
+        </h2>
+    </div>
+
+    <div class="order-container">
+
+        <div class="ui two column stackable grid container">
+
+            <div class="column">
+
+                <div class="ui stackable grid">
+
+                    <div class="sixteen wide column">
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Название <i class="ui icon tag"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Полное название (title) <i class="ui icon tag"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Категория <i class="ui icon sitemap"></i>
+                            </label>
+                            <div class="order-setting">
+                                <select class="ui search dropdown">
+                                    <option>Не указано</option>
+                                    <option>ТВ шоп</option>
+                                    <option>Для дома</option>
+                                    <option>Для сада</option>
+                                    <option>Для кухни</option>
+                                    <option>Автотовар</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Локализация <i class="ui icon globe"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="country">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Выберите страну</div>
+                                    <div class="menu">
+
+                                        <div class="item" data-value="af"><img src="../build/img/flags/no_icon.ico" alt="">Не
+                                            указано
+                                        </div>
+                                        <div class="item" data-value="af"><i class="af flag"></i>Афганистан</div>
+                                        <div class="item" data-value="af"><i class="ui icon globe"></i>Все</div>
+                                        <div class="item" data-value="by"><i class="by flag"></i>Беларусь</div>
+                                        <div class="item" data-value="md"><i class="md flag"></i>Молдова</div>
+                                        <div class="item" data-value="ae"><i class="ae flag"></i>Арабские Эмираты</div>
+                                        <div class="item" data-value="hu"><i class="hu flag"></i>Венгрия</div>
+                                        <div class="item" data-value="kz"><i class="kz flag"></i>Казахстан</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Модель <i class="ui icon registered outline"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Артикул <i class="ui icon sticky note outline"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Валюта <i class="ui icon money bill alternate outline"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="status">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Украинская гривна (грн.)</div>
+                                    <div class="menu">
+
+                                        <div class="item" data-value="af">
+                                            Украинская гривна (грн.)
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Русский рубль (руб.)
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Доллар ($)
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Евро (€)
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Венгерский форинт (HUF)
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Производитель <i class="icon trademark"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="status">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text"> Не указано</div>
+                                    <div class="menu">
+
+                                        <div class="item" data-value="af"><img src="../build/img/flags/no_icon.ico" alt="">Не
+                                            указано
+                                        </div>
+
+                                        <div class="item" data-value="af">
+
+                                            LG
+                                        </div>
+
+                                        <div class="item" data-value="af">
+
+                                            Samsung
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Falcon
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Tenex
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Gazer
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Globex
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Kenwood
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Palmann
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            Pioneer
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Отдел <i class="icon building"></i>
+                            </label>
+
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="office">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Розничный магазин</div>
+                                    <div class="menu">
+
+                                        <div class="item" data-value="af">Розничный магазин</div>
+                                        <div class="item" data-value="af">Оптовый отдел</div>
+                                        <div class="item" data-value="af">Отдел ОАЭ</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Цвет <i class="icon eye dropper"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="office">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Не указано</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="af">
+                                            <img src="../build/img/flags/no_icon.ico" alt="">
+                                            Не указано
+                                        </div>
+
+                                        <div class="item" data-value="af">Белый</div>
+                                        <div class="item" data-value="af">Чёрный</div>
+                                        <div class="item" data-value="af">Синий</div>
+                                        <div class="item" data-value="af">Красный</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Сайт <i class="icon flag checkered"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui fluid selection dropdown">
+                                    <input type="hidden" name="office">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Не указано</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="af">
+                                            <img src="../build/img/flags/no_icon.ico" alt="">
+                                            Не указано
+                                        </div>
+
+                                        <div class="item" data-value="af">
+                                            <i class="icon globe"></i>
+                                            test.com
+                                        </div>
+                                        <div class="item" data-value="af">
+                                            <i class="icon globe"></i>
+                                            lorem.ru
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Цена продажи <i class="icon shopping basket"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Цена закупки <i class="icon shopping basket"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row">
+                            <label for="">
+                                Цена акционная <i class="icon percent"></i>
+                            </label>
+                            <div class="order-setting">
+                                <div class="ui input">
+                                    <input type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-setting-row product-description-wrap">
+                            <label for="">
+                                Описание <i class="icon align justify"></i>
+                            </label>
+                            <div class="ui input">
+                                <textarea type="text" rows="3" placeholder=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="column">
+
+                <div class="column">
+
+                    <div class="ui horizontal divider">Выбрать фото</div>
+
+                    <div class="chose-photo">
+
+                        <label for="chose-photo__input" class="chose-photo__label"></label>
+                        <input type="file" id="chose-photo__input">
+
+                    </div>
+
+                </div>
+
+                <div class="column">
+
+                    <div class="ui horizontal divider">Нова почта</div>
+
+                    <div class="order-setting-row">
+                        <label for="">
+                            Опис вантажу <i class="arrows alternate icon"></i>
+                        </label>
+                        <div class="order-setting">
+                            <select class="ui search dropdown">
+                                <option>Не указано</option>
+                                <option>ТВ шоп</option>
+                                <option>Для дома</option>
+                                <option>Для сада</option>
+                                <option>Для кухни</option>
+                                <option>Автотовар</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="order-setting-row">
+
+                        <label for="">
+                            Вес <i class="arrows alternate icon"></i>
+                        </label>
+
+                        <div class="order-setting">
+
+                            <div class="input-container">
+                                <div class="ui input">
+                                    <input class="weight-input" type="text" value="1.00">
+                                </div>
+                            </div>
+
+                            <span>кг.</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="ui grid">
+
+                        <div class="three column row">
+
+                            <div class="column input-row">
+                                <div class="order-setting-row">
+
+                                    <label for="">
+                                        Длина
+                                    </label>
+
+                                    <div class="order-setting">
+
+                                        <div class="input-container">
+                                            <div class="ui input">
+                                                <input type="text" value="0.00">
+                                            </div>
+                                        </div>
+
+                                        <span>см.</span>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="column input-row">
+
+                                <div class="order-setting-row">
+
+                                    <label for="">
+                                        Высота
+                                    </label>
+
+                                    <div class="order-setting">
+
+                                        <div class="input-container">
+                                            <div class="ui input">
+                                                <input type="text" value="0.00">
+                                            </div>
+                                        </div>
+
+                                        <span>см.</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="column input-row">
+
+                                <div class="order-setting-row">
+
+                                    <label for="">
+                                        Глубина
+                                    </label>
+
+                                    <div class="order-setting">
+
+                                        <div class="input-container">
+                                            <div class="ui input">
+                                                <input type="text" value="0.00">
+                                            </div>
+                                        </div>
+
+                                        <span>см.</span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="column">
+
+                    <div class="ui horizontal divider">Sub id</div>
+
+                    <ol class="ui list sub-id-list">
+
+                        <li>
+
+                            <div class="list-item">
+
+                                <div class="left-item">8Gb</div>
+
+                                <div class="right-item">
+
+                                    <span class="item__count">5</span>
+
+                                    <span class="item__unit">шт.</span>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="list-item">
+
+                                <div class="left-item">8Gb</div>
+
+                                <div class="right-item">
+
+                                    <span class="item__count">5</span>
+
+                                    <span class="item__unit">шт.</span>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li>
+                            <div class="list-item">
+
+                                <div class="left-item">Всего</div>
+
+                                <div class="right-item">
+
+                                    <span class="item__count">10</span>
+
+                                    <span class="item__unit">шт.</span>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                    </ol>
+
+                    <div class="sub-id__not-found text-align-center">
+                        <p>Нет Sub-ID для этого товара.</p>
+                    </div>
+
+                </div>
+
+                <div class="column">
+
+                    <div class="ui horizontal divider">Количество на складе </div>
+
+                    <div class="quantity">
+
+                        <div class="quantity__item">
+
+                            <p>Общее количество:</p>
+
+                        </div>
+
+                        <div class="quantity__item">
+
+                            <div class="item-count">0</div>
+
+                            <div class="item-unit">шт.</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="column pt-3 text-align-center">
+            <button class="ui primary button">
+                Сохранить
+            </button>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="ui modal tiny modal-category">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="name">
+                        Название <i class="ui icon tag"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text" placeholder="" name="name" id="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="belongTo">
+                        Подчиняется <i class="ui icon sitemap"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui selection disabled dropdown">
+                            <input type="hidden" name="belong" id="belongTo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Не указано</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Male</div>
+                                <div class="item" data-value="0">Female</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="type">
+                        Тип <i class="code branch icon"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui selection dropdown">
+                            <input type="hidden" name="belong" id="type">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Не указано</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Male</div>
+                                <div class="item" data-value="0">Female</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui horizontal divider pt-4">Дополнительно</div>
+                    <div class="order-setting-row">
+                        <label for="status">
+                            Статус <i class="ui icon fa-eye-slash"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="status"
+                                       id="status"
+                                       value="Используется"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="name">
+                            Порядок сортировки <i class="ui icon server"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="orderSort"
+                                       value="4"
+                                       id="orderSort"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="date">
+                            Добавлено <i class="ui icon calendar"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="date"
+                                       value="2018-10-04"
+                                       id="date"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="ui modal tiny modal-manufacturers">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="name">
+                        Название <i class="ui icon tag"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <input type="text" placeholder="" name="name" id="name">
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="belongTo">
+                        Подчиняется <i class="ui icon sitemap"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui selection disabled dropdown">
+                            <input type="hidden" name="belong" id="belongTo">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Не указано</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Male</div>
+                                <div class="item" data-value="0">Female</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-setting-row">
+                    <label for="type">
+                        Тип <i class="code branch icon"></i>
+                    </label>
+                    <div class="order-setting">
+                        <div class="ui selection dropdown">
+                            <input type="hidden" name="belong" id="type">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Не указано</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Male</div>
+                                <div class="item" data-value="0">Female</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui horizontal divider pt-4">Дополнительно</div>
+                    <div class="order-setting-row">
+                        <label for="status">
+                            Статус <i class="ui icon fa-eye-slash"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="status"
+                                       id="status"
+                                       value="Используется"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="name">
+                            Порядок сортировки <i class="ui icon server"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="orderSort"
+                                       value="4"
+                                       id="orderSort"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-setting-row">
+                        <label for="date">
+                            Добавлено <i class="ui icon calendar"></i>
+                        </label>
+                        <div class="order-setting">
+                            <div class="ui input">
+                                <input type="text"
+                                       name="date"
+                                       value="2018-10-04"
+                                       id="date"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </div>
