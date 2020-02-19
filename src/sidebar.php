@@ -64,7 +64,7 @@
                     <li title="Сайты (лендинги)"><a href="landings.php">Сайты (лендинги) </a></li>
                     <li title="Категории атрибутов"><a href="attributes_categories.php">Категории атрибутов </a></li>
                     <li title="Атрибуты (Sub-ID)"><a href="attributes.php">Атрибуты (Sub-ID) </a></li>
-                    <li title="Цвета товаров"><a href="#">Цвета товаров </a></li>
+                    <li title="Цвета товаров"><a href="colors.php">Цвета товаров </a></li>
                     <li title="Страны"><a href="#">Страны </a></li>
                 </ul>
             </li>

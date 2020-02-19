@@ -3156,3 +3156,58 @@
 
 
 </div>
+
+<div class="ui modal tiny modal-wrap modal-color">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="color__name">Название</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <input type="text"
+                                   value="47 размер обуви"
+                                   id="color__name"
+                                   name="name">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="order-setting-row align-items-start">
+                    <label for="color__code">Код</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <div class="column">
+                                <input type="text"
+                                       value="47 размер обуви"
+                                       id="color__code"
+                                       name="name">
+                                <div class="info">
+                                    (без пробелов) Например: black_red - чёрно-красный
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button modal-attributes_categories__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
