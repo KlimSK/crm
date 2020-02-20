@@ -1,25 +1,18 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<?php
 
-    <link rel="stylesheet" href="fonts/yandex/stylesheet.css">
-    <link rel="stylesheet" href="fonts/lato/lato.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+const title = 'Индекс';
 
-</head>
-<body>
+include "include/head.php";
+
+?>
 
 <main>
-    <? include('sidebar.php'); ?>
+    <? include('include/sidebar.php'); ?>
 
 
     <section class="main-content">
 
-        <? include('header.php'); ?>
+        <? include('include/header.php'); ?>
 
         <div class="content-section">
             <div class="content-controls">
@@ -2698,9 +2691,9 @@
 </main>
 
 
-<? include('modals.php') ?>
+<? include('include/modals.php') ?>
 
-<? include('scripts.php') ?>
+<? include('include/scripts.php') ?>
 
 </body>
 </html>
