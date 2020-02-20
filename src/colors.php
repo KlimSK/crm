@@ -99,7 +99,7 @@
                         <td>
                             <p class="grey-style">black</p>
                         </td>
-                        <td>
+                        <td class="text-align-center">
                             <div class="ui toggle checkbox">
                                 <input type="checkbox"
                                        data-id="1"
@@ -125,7 +125,7 @@
                         <td>
                             <p class="grey-style">white</p>
                         </td>
-                        <td>
+                        <td class="text-align-center">
                             <div class="ui toggle checkbox">
                                 <input type="checkbox"
                                        data-id="2"

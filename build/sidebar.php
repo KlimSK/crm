@@ -65,7 +65,7 @@
                     <li title="Категории атрибутов"><a href="attributes_categories.php">Категории атрибутов </a></li>
                     <li title="Атрибуты (Sub-ID)"><a href="attributes.php">Атрибуты (Sub-ID) </a></li>
                     <li title="Цвета товаров"><a href="colors.php">Цвета товаров </a></li>
-                    <li title="Страны"><a href="#">Страны </a></li>
+                    <li title="Страны"><a href="countries.php">Страны </a></li>
                 </ul>
             </li>
             <li title="Отправка товара">

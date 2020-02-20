@@ -83,7 +83,7 @@
                     <tr>
                     <th width="10">id</th>
                     <th width="90">Название</th>
-                    <th width="40">Статус</th>
+                    <th width="10">Статус</th>
                     <th width="10">Sort</th>
                 </tr>
                 </thead>
@@ -97,7 +97,7 @@
                             <i class="fa fa-building"></i>
                             <span class="item">Размер флешки</span>
                         </td>
-                        <td>
+                        <td class="text-align-center">
                             <div class="ui toggle checkbox">
                                 <input type="checkbox"
                                        data-id="1"
@@ -118,7 +118,7 @@
                             <i class="fa fa-building"></i>
                             <span class="item">Размер обуви</span>
                         </td>
-                        <td>
+                        <td class="text-align-center">
                             <div class="ui toggle checkbox">
                                 <input type="checkbox"
                                        data-id="2"

@@ -99,7 +99,7 @@
                         <i class="folder outline icon"></i>
                         <span class="item">Автотовары</span>
                     </td>
-                    <td>
+                    <td class="text-align-center">
                         <div class="ui toggle checkbox">
                             <input type="checkbox" name="order-passed">
                             <label for="order-passed"></label>
@@ -111,7 +111,6 @@
                     <td>
                         <span class="item">1</span>
                     </td>
-
                 </tr>
                 <tr>
                     <td>
@@ -121,7 +120,7 @@
                         <i class="folder open outline icon"></i>
                         <span class="item">Электроника</span>
                     </td>
-                    <td>
+                    <td class="text-align-center">
                         <div class="ui toggle checkbox">
                             <input type="checkbox" name="order-passed">
                             <label for="order-passed"></label>

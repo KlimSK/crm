@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="fonts/yandex/stylesheet.css">
     <link rel="stylesheet" href="fonts/lato/lato.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Продукты</title>
+    <title>Страны</title>
 
 </head>
 <body>
@@ -77,235 +77,131 @@
 
         </div>
 
-        <div class="main-table products-table">
+        <div class="main-table manufacturers-table">
             <table class=" ui table blue celled">
                 <thead>
-                <tr>
-                    <th width="65">id</th>
-                    <th width="90">Фото</th>
-                    <th width="340">Название</th>
-                    <th width="90">Модель</th>
-                    <th width="90">Артикул</th>
-                    <th width="150">Категория</th>
-                    <th width="150">Цена (база)</th>
-                    <th width="75">Валюта</th>
-                    <th width="80">Статус</th>
-                    <th width="100">Цена (закуп.)</th>
-                    <th width="100">Кол-во</th>
-                    <th width="80">В заказах</th>
-                    <th width="160">Производитель</th>
-                    <th width="120">Сумма (закуп.)</th>
-                </tr>
+                    <tr>
+                        <th width="10">id</th>
+                        <th width="20">Код</th>
+                        <th width="40">Title</th>
+                        <th width="40">Название</th>
+                        <th width="20">Alpha</th>
+                        <th width="20">ISO</th>
+                        <th width="10">Status</th>
+                    </tr>
 
-
-                <tr>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui dropdown mini main-table-dropdown">
-                            <input type="hidden" name="filters">
-                            <span class="text">Не указано</span> <i class="ui icon caret down"></i>
-                            <div class="menu">
-                                <div class="ui icon search input">
-                                    <i class="search icon"></i>
-                                    <input type="text" placeholder="Поиск...">
-                                </div>
-                                <div class="divider"></div>
-                                <div class="scrolling menu">
-                                    <div class="item" data-value="important">Не указано</div>
-                                    <div class="item" data-value="announcement">ТВ шоп</div>
-                                    <div class="item" data-value="cannotfix">Для дома</div>
-                                    <div class="item" data-value="news">Для сада</div>
-                                    <div class="item" data-value="enhancement">Для кухни</div>
-                                    <div class="item" data-value="off-topic">Автотовар</div>
-                                </div>
+                    <tr>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="id">
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <div class="ui dropdown mini main-table-dropdown">
-                            <input type="hidden" name="filters">
-                            <span class="text">Все</span> <i class="ui icon caret down"></i>
-                            <div class="menu">
-                                <div class="scrolling menu">
-                                    <div class="item" data-value="important">Все</div>
-                                    <div class="item" data-value="important">Включен</div>
-                                    <div class="item" data-value="announcement">Отключен</div>
-                                </div>
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="code">
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui input">
-                            <input type="text">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="ui dropdown mini main-table-dropdown">
-                            <input type="hidden" name="filters">
-                            <span class="text">Все</span> <i class="ui icon caret down"></i>
-                            <div class="menu">
-                                <div class="scrolling menu">
-                                    <div class="item" data-value="important">Все</div>
-                                    <div class="item" data-value="important">(+) Есть</div>
-                                    <div class="item" data-value="announcement">(0) Нет</div>
-                                    <div class="item" data-value="announcement">(-) Минус</div>
-                                </div>
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="title">
                             </div>
-                        </div>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                        <div class="ui dropdown mini main-table-dropdown">
-                            <input type="hidden" name="filters">
-                            <span class="text">Все</span> <i class="ui icon caret down"></i>
-                            <div class="menu">
-                                <div class="scrolling menu">
-                                    <div class="item" data-value="important">Все</div>
-                                </div>
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="name">
                             </div>
-                        </div>
-                    </td>
-                    <td>
-
-                    </td>
-
-                </tr>
-
-
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="alpha">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="iso">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="ui input">
+                                <input type="text"
+                                       name="status">
+                            </div>
+                        </td>
+                    </tr>
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td><p>1220</p></td>
-                    <td class="product-photo">
-                        <img src="../build/img/no_foto-120x100.png" alt="">
-                    </td>
-                    <td><p>Высокоэффективные шипучие таблетки для похудения  MinuSize **</p></td>
-                    <td>
 
-                    </td>
-                    <td></td>
-                    <td>
-                        Авто ТОВАР
-                    </td>
-                    <td class="order-sum"><p>500.00</p></td>
-                    <td>
-                        <p>
-                           грн.
-                        </p>
-                    </td>
-                    <td class="product-status text-align-center" >
-                        <div class="ui toggle checkbox green">
-                            <input type="checkbox" name="public">
-                            <label for=""></label>
-                        </div>
-
-                    </td>
-                    <td class="order-sum">
-                        <p>400.00</p>
-                    </td>
-                    <td class="order-sum">
-                        <p class="red-text">0</p>
-                    </td>
-                    <td class="order-sum">
-                        <p class="blue-text">3</p>
-                    </td>
-                    <td>
-
-                    </td>
-
-                    <td class="order-sum">
-                        <p>
-                            15000.00
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><p>1689</p></td>
-                    <td class="product-photo">
-                        <img src="../build/img/no_foto-120x100.png" alt="">
-                    </td>
-                    <td>
-                        <p>Телефон IPHONE</p>
-                        <p class="additional-info">
-                            Вес: 0.50кг 13.0см х 0.5см х 7.0см
-                        </p>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td></td>
-                    <td>
-                        Авто ТОВАР
-                    </td>
-                    <td class="order-sum discount">
-                        <p class="green-text"><span class="old-price red-text">8000.00</span> 6000.00</p>
-                    </td>
-                    <td>
-                        <p>
-                           грн.
-                        </p>
-                    </td>
-                    <td class="product-status text-align-center">
-                        <div class="ui toggle checkbox green">
-                            <input type="checkbox" name="public">
-                            <label for=""></label>
-                        </div>
-
-                    </td>
-                    <td class="order-sum">
-                        <p>1000.00</p>
-                    </td>
-                    <td class="order-sum">
-                        <p class="green-text">15</p>
-                    </td>
-                    <td class="order-sum">
-                        <p class="blue-text">3</p>
-                    </td>
-                    <td>
-
-                    </td>
-
-                    <td class="order-sum">
-                        <p>
-                            15000.00
-                        </p>
-                    </td>
-                </tr>
-
-
+                    <tr>
+                        <td>
+                            <p>1</p>
+                        </td>
+                        <td>
+                            <p>UA</p>
+                        </td>
+                        <td>
+                            <img src="/img/flags/UA.ico" class="table-icon">
+                            <span class="item">Украина</span>
+                        </td>
+                        <td>
+                            <p>Ukrane</p>
+                        </td>
+                        <td>
+                            <div class="grey-style">
+                                <p>BGD</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="grey-style">
+                                <p>50</p>
+                            </div>
+                        </td>
+                        <td class="text-align-center">
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox"
+                                       name="status">
+                                <label for="status"></label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="grey-bg">
+                        <td class="disabled">
+                            <p>1</p>
+                        </td>
+                        <td class="disabled">
+                            <p>UA</p>
+                        </td>
+                        <td class="disabled">
+                            <img src="/img/flags/UA.ico" class="table-icon">
+                            <span class="item">Украина</span>
+                        </td>
+                        <td class="disabled">
+                            <p>Ukrane</p>
+                        </td>
+                        <td class="disabled">
+                            <div class="grey-style">
+                                <p>BGD</p>
+                            </div>
+                        </td>
+                        <td class="disabled">
+                            <div class="grey-style">
+                                <p>50</p>
+                            </div>
+                        </td>
+                        <td class="text-align-center">
+                            <div class="ui toggle checkbox">
+                                <input type="checkbox"
+                                       name="status">
+                                <label for="status"></label>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -618,13 +514,13 @@
             <td>Telegram (канал)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
+                        href="https://t.me/Lp_crm_biz" target="_blank">https://t.me/Lp_crm_biz</a></td>
         </tr>
         <tr>
             <td>Telegram (техподдержка)</td>
             <td><i class="fas fa-paper-plane"
                    style="color:#FFF; background:#32AFED; padding: 6px 7px 6px 5px; border-radius: 30px;"></i>&nbsp;<a
-                    href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
+                        href="https://t.me/TehLpCrm" target="_blank">https://t.me/TehLpCrm</a></td>
         </tr>
         <tr>
             <td>Блог CRM</td>
@@ -635,8 +531,8 @@
         <tr>
             <td>YouTube</td>
             <td><i class="fab fa-youtube-square" style="color:#DC212F;"></i><a
-                    href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
-                    target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
+                        href="https://www.youtube.com/watch?v=dDQaWkh4aSY&amp;index=18&amp;list=PLNVhsXSZ6ZThpfW-BJ_t6bDFGNrvFDs4j"
+                        target="_blank">https://www.youtube.com/watch?v=dDQaWkh4aSY</a></td>
         </tr>
         <tr>
             <td>Киевстар</td>
@@ -1344,84 +1240,6 @@
     </div>
 
 </div>
-
-<div class="ui modal tiny modal-order-notification">
-    <i class="close icon"></i>
-
-    <h2 class="modal-title">
-        Создать напоминание
-    </h2>
-
-    <form action="">
-        <div class="form-row">
-            <label for="">Дата выполнения <i class="icon calendar alternate outline"></i></label>
-
-            <div class="input-wrap">
-                <div class="ui calendar" id="notification-date">
-                    <div class="ui input">
-                        <input type="text">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="form-row">
-            <label for="">Тип <i class="icon phone"></i></label>
-
-            <div class="input-wrap">
-                <select class="ui dropdown">
-                    <option value="1">Перезвонить позже (заказ)</option>
-                    <option value="0">Обычное напоминание</option>
-                </select>
-            </div>
-
-        </div>
-
-        <div class="form-row">
-            <label for="">ID заказа <i class="icon "></i></label>
-
-            <div class="input-wrap">
-                <div class="ui disabled input">
-                    <input type="text" value="42532512">
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="form-row">
-            <label for="">Для кого <i class="icon"></i></label>
-
-            <div class="input-wrap">
-                <select class="ui dropdown">
-                    <option value="1">Только для себя</option>
-                    <option value="0">Для всех пользователей</option>
-                </select>
-            </div>
-
-        </div>
-
-
-        <div class="form-row">
-            <label for="">Описание <i class="icon "></i></label>
-
-            <div class="input-wrap">
-                <div class="ui input">
-                    <textarea rows="4" type="text"></textarea>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="modal-save">
-            <button class="ui labeled icon button blue"><i class="save icon"></i> Сохранить</button>
-        </div>
-    </form>
-
-</div>
-
 
 <? include('modals.php') ?>
 

@@ -226,7 +226,7 @@
                            грн.
                         </p>
                     </td>
-                    <td class="product-status">
+                    <td class="product-status text-align-center" >
                         <div class="ui toggle checkbox green">
                             <input type="checkbox" name="public">
                             <label for=""></label>
@@ -278,7 +278,7 @@
                            грн.
                         </p>
                     </td>
-                    <td class="product-status">
+                    <td class="product-status text-align-center">
                         <div class="ui toggle checkbox green">
                             <input type="checkbox" name="public">
                             <label for=""></label>
