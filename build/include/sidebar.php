@@ -29,7 +29,7 @@
 
                     <li title="Группы пользователей" class="active"><a href="/../tabs/contacts/user_groups.php">Группы пользователей </a></li>
                     <li title="Пользователи"><a href="#">Пользователи </a></li>
-                    <li title="Отделы"><a href="#">Отделы </a></li>
+                    <li title="Отделы"><a href="/../tabs/contacts/offices.php">Отделы </a></li>
                     <li title="Группы клиентов"><a href="#">Группы клиентов </a></li>
                     <li title="Клиенты"><a href="#">Клиенты </a></li>
                 </ul>

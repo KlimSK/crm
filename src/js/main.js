@@ -111,6 +111,11 @@ function headerDefinitions() {
         on: 'click'
     });
 
+    // Контакты кнопки навигации , "Выбрать все поля"
+
+    $('.call-popup-js-mini').popup({
+        variation: 'mini'
+    });
 
 
     $('.ui.dropdown').each(function () {

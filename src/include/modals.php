@@ -3262,3 +3262,65 @@
 
 
 </div>
+
+<div class="ui modal tiny modal-wrap modal-offices">
+    <i class="close icon"></i>
+
+    <div class="modal-head">
+        <h2 class="modal-title">
+            Изменение категории [2] : Товары для дома
+        </h2>
+    </div>
+
+    <div class="order-container">
+        <div class="ui one column stackable grid container">
+            <div class="column">
+                <div class="order-setting-row">
+                    <label for="offices__name">Название</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <input type="text"
+                                   value="Офис №3"
+                                   id="offices__name"
+                                   name="name">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order-setting-row">
+                    <label for="offices__email">E-mail</label>
+                    <div class="order-setting">
+                        <div class="ui labeled input mini">
+                            <input type="text"
+                                   value="Офис №3"
+                                   id="offices__email"
+                                   name="email">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="order-setting-row">
+                    <label for="offices__adress">Описание</label>
+                    <div class="order-setting">
+                        <div class="ui input">
+                            <textarea type="text"
+                                      rows="3"
+                                      name="description"
+                                      id="offices__adress"
+                                      placeholder="">г. Киев</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column pt-3 text-align-center">
+                    <button class="ui primary button offices__button">
+                        Сохранить
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
