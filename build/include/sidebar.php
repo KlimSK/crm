@@ -19,7 +19,7 @@
                     <a href="/index.php">Рабочий стол</a>
                     </span>
             </li>
-            <li title="Контакты">
+            <li title="Контакты" class="active">
                     <span>
                     <i class="fas fa-users"></i>
                     Контакты
@@ -27,7 +27,7 @@
                 <ul>
                     <li class="min-menu-title no-hover">Контакты</li>
 
-                    <li title="Группы пользователей"><a href="#">Группы пользователей </a></li>
+                    <li title="Группы пользователей" class="active"><a href="/../tabs/contacts/user_groups.php">Группы пользователей </a></li>
                     <li title="Пользователи"><a href="#">Пользователи </a></li>
                     <li title="Отделы"><a href="#">Отделы </a></li>
                     <li title="Группы клиентов"><a href="#">Группы клиентов </a></li>
@@ -69,7 +69,7 @@
                     <li title="Страны"><a href="/../tabs/catalog/countries.php">Страны </a></li>
                 </ul>
             </li>
-            <li class="active" title="Отправка товара">
+            <li title="Отправка товара">
                     <span>
                     <i class="fas fa-truck"></i>
                     Отправка товара
@@ -77,7 +77,7 @@
                 <ul>
                     <li class="min-menu-title no-hover">Отправка товара</li>
 
-                    <li title="Список для курьера" class="active">
+                    <li title="Список для курьера">
                         <a href="/../tabs/send_products/shipment.php">Список для курьера </a>
                     </li>
                     <li title="Реестры НП"><a href="#">Реестры НП </a></li>
