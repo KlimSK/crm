@@ -177,7 +177,7 @@ main
     cursor: pointer
     z-index: 8
     font-size: 12px
-  ul
+  #ul-statusy
     z-index: 7
     margin: 0 3px
     flex-grow: 0
@@ -190,11 +190,16 @@ main
     display: flex
     align-items: center
     transition: .3s
+  div#ul-statusy
+    bottom: -1px
+    position: relative
     li
       display: block
       white-space: nowrap
       a
         font-size: 10px
+    .item
+      font-size: 10px
 
 #controls-settings-dropdown.ui.dropdown
   .menu
@@ -210,7 +215,7 @@ main
     table-layout: fixed
     thead
       tr
-        th, td
+        th,td
           position: sticky
           top: 0
           z-index: 5
@@ -314,7 +319,10 @@ main
           border-top: none
           border-bottom: 1px solid rgba(0, 0, 0, .1)
           border-right: 1px solid rgba(0, 0, 0, .1)
-
+          &:first-child
+            left: 0
+            z-index: 10
+            position: sticky
           img
             max-height: 1em
           p

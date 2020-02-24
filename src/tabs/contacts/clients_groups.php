@@ -1,5 +1,5 @@
 <?php
-const title = 'Отделы';
+const title = 'Группы клиентов';
 include ("../../include/head.php");
 ?>
 
@@ -13,14 +13,13 @@ include ("../../include/head.php");
 
         <? include('../../include/content_controll/forContacts.php'); ?>
 
-        <div class="main-table user_groups-table" data-modal="offices">
+        <div class="main-table clients_groups-table" data-modal="clients_groups">
             <table class=" ui table blue celled">
                 <thead>
                     <tr>
                         <th width="10">id</th>
                         <th width="30">Название</th>
-                        <th width="30">Адрес</th>
-                        <th width="30">E-mail</th>
+                        <th width="50">Описание</th>
                         <th width="10">Sort</th>
                     </tr>
 
@@ -43,37 +42,24 @@ include ("../../include/head.php");
                                        name="description">
                             </div>
                         </td>
-                        <td>
-                            <div class="ui input">
-                                <input type="text"
-                                       name="description">
-                            </div>
-                        </td>
                         <td></td>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
+                    <tr class="disabled">
                         <td>
                             <p>1</p>
                         </td>
                         <td>
-                            <i class="fa fa-users"></i>
-                            <span class="item">Администратор</span>
+                            <i class="fa fa-user-o"></i>
+                            <span class="item">Покупатель</span>
                         </td>
+                        <td></td>
                         <td>
                             <p>
-                                г. Харьков
+                                <span class="fa fa-lock"></span>
                             </p>
-                        </td>
-                        <td>
-                            <p>
-                                office1test@gmail.com
-                            </p>
-                        </td>
-                        <td>
-                            <p>1</p>
                         </td>
                     </tr>
                     <tr>
@@ -81,17 +67,10 @@ include ("../../include/head.php");
                             <p>2</p>
                         </td>
                         <td>
-                            <i class="fa fa-users"></i>
-                            <span class="item">Менеджер</span>
+                            <i class="fa fa-user-o"></i>
+                            <span class="item">Партнёр</span>
                         </td>
-                        <td>
-                            <p>г. Киев</p>
-                        </td>
-                        <td>
-                            <p>
-                                office1test@gmail.com
-                            </p>
-                        </td>
+                        <td></td>
                         <td>
                             <p>1</p>
                         </td>

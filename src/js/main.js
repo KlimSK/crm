@@ -10,8 +10,18 @@ $(document).ready(function () {
     orderModalSendCalendar($('#order-modal-send'));
     orderModalSendCalendar($('#notification-date'));
     modalDefinitions();
+
+    // Подключаем табы
+    tabs();
 });
 
+// Табы
+
+function tabs() {
+
+    // Табы на шаблоне "clients"
+    $('.custom-tabs .item').tab();
+};
 
 function sidebarMenuControls() {
     $('.main-menu>ul.menu-list>li>span').click(function () {
@@ -540,3 +550,14 @@ $(".photo-input_js").change(function () {
     }
 
 });
+
+// Задаём первым елементам таблицы бекграунд
+// родительского элемента
+
+(function () {
+    $('.setBackgroundColorForTd tr').each(function (i,item) {
+        var parentBacgroundColor = $(this).attr("class");
+        $(this).find("td").first().addClass(parentBacgroundColor);
+    });
+
+})();
